@@ -24,10 +24,20 @@ http.createServer((req, res) => {
           if (parsed && Array.isArray(parsed.orders)) {
             parsed.orders = parsed.orders.join(',');
           }
+          if (parsed.key) {
+            parsed.key = String(parsed.key).trim().replace(/^["']|["']$/g, '');
+          }
+          if (parsed.action) {
+            parsed.action = String(parsed.action).trim();
+          }
           params = new URLSearchParams(parsed);
         } catch (_) {
           params = new URLSearchParams(rawBody);
         }
+
+        const action = params.get('action') || 'unknown';
+        const keyLen = (params.get('key') || '').length;
+        console.log(`[PROXY REQ] action=${action} | keyLength=${keyLen}`);
 
         const upstreamRes = await fetch('https://finesmmpanel.com/api/v2', {
           method: 'POST',
@@ -39,9 +49,12 @@ http.createServer((req, res) => {
         });
 
         const text = await upstreamRes.text();
+        console.log(`[PROXY RES] FineSMM HTTP ${upstreamRes.status}: ${text.slice(0, 150)}`);
+
         res.writeHead(upstreamRes.status, { 'Content-Type': 'application/json' });
         res.end(text);
       } catch (err) {
+        console.error(`[PROXY ERROR]`, err.message);
         res.writeHead(500, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify({ error: err.message }));
       }

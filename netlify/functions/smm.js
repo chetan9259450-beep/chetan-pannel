@@ -33,6 +33,14 @@ exports.handler = async function (event, context) {
       }
     }
 
+    // Sanitize key and action
+    if (payload.key) {
+      payload.key = String(payload.key).trim().replace(/^["']|["']$/g, '');
+    }
+    if (payload.action) {
+      payload.action = String(payload.action).trim();
+    }
+
     // Handle array of order IDs for batch status check
     if (payload && Array.isArray(payload.orders)) {
       payload.orders = payload.orders.join(',');

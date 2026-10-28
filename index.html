@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fine SMM Panel — Anti-Bot Full Engagement Pro</title>
+  <title>Chetan Panel — Anti-Bot Full Engagement Pro</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Google Fonts: Inter & JetBrains Mono -->
@@ -13,10 +13,24 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    :root {
+      --bg-charcoal: #0c0e12;
+      --card-charcoal: #15181f;
+      --surface-charcoal: #1b1f28;
+      --input-charcoal: #0e1015;
+      --silver-glow: rgba(226, 232, 240, 0.08);
+      --signal-red: #ef4444;
+      --signal-red-glow: rgba(239, 68, 68, 0.28);
+    }
     body {
-      background-color: #F8FAFC;
+      background-color: #0c0e12;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(220, 38, 38, 0.12) 0px, transparent 48%),
+        radial-gradient(at 100% 0%, rgba(148, 163, 184, 0.05) 0px, transparent 40%),
+        radial-gradient(at 50% 100%, rgba(220, 38, 38, 0.07) 0px, transparent 50%);
+      background-attachment: fixed;
       font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      color: #0F172A;
+      color: #e2e8f0;
     }
     .font-mono {
       font-family: 'JetBrains Mono', monospace;
@@ -26,59 +40,77 @@
       height: 6px;
     }
     ::-webkit-scrollbar-track {
-      background: #F1F5F9;
+      background: #0f1116;
     }
     ::-webkit-scrollbar-thumb {
-      background: #CBD5E1;
+      background: #2b313f;
       border-radius: 9999px;
     }
     ::-webkit-scrollbar-thumb:hover {
-      background: #94A3B8;
+      background: #ef4444;
     }
     select {
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
     }
+    select option, select optgroup {
+      background-color: #12151c;
+      color: #e2e8f0;
+    }
+    select optgroup {
+      color: #f87171;
+      font-weight: 700;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #ef4444 !important;
+      box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.35) !important;
+    }
+    .signal-glow {
+      box-shadow: 0 0 20px rgba(239, 68, 68, 0.25);
+    }
+    .silver-glow {
+      box-shadow: 0 0 20px rgba(226, 232, 240, 0.06);
+    }
   </style>
 </head>
 <body class="min-h-screen flex flex-col antialiased">
 
   <!-- TOP HEADER -->
-  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-30 px-4 sm:px-6 lg:px-8 py-3 shadow-xs">
+  <header class="bg-[#13161c]/95 backdrop-blur-md border-b border-[#242a37] sticky top-0 z-30 px-4 sm:px-6 lg:px-8 py-3 shadow-xs">
     <div class="max-w-7xl mx-auto flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center text-white font-bold text-base shadow-md shadow-blue-500/20">
-          F
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-red-600 via-rose-600 to-red-700 flex items-center justify-center text-white font-extrabold text-base shadow-lg shadow-red-600/35">
+          C
         </div>
         <div>
           <div class="flex items-center gap-2">
-            <h1 class="text-sm sm:text-base font-bold text-slate-900 leading-none">Fine SMM Panel</h1>
-            <span class="px-2 py-0.5 text-[10px] font-semibold bg-blue-50 text-blue-600 rounded-full border border-blue-200">API v2</span>
-            <span class="px-2 py-0.5 text-[10px] font-semibold bg-emerald-50 text-emerald-600 rounded-full border border-emerald-200 flex items-center gap-1">
-              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> Anti-Bot Pacing
+            <h1 class="text-sm sm:text-base font-extrabold text-white tracking-tight leading-none">Chetan Panel</h1>
+            <span class="px-2 py-0.5 text-[10px] font-semibold bg-red-500/15 text-red-400 rounded-full border border-red-500/30">API v2</span>
+            <span class="px-2 py-0.5 text-[10px] font-semibold bg-red-950/40 text-red-400 rounded-full border border-red-500/30 flex items-center gap-1 font-mono">
+              <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Anti-Bot Pacing
             </span>
           </div>
-          <p class="text-[11px] text-slate-500 mt-0.5">Multi-Platform Organic Traffic & Engagement Scheduler</p>
+          <p class="text-[11px] text-slate-400 mt-0.5">Multi-Platform Organic Traffic & Engagement Scheduler</p>
         </div>
       </div>
 
       <!-- Right Header Actions -->
       <div class="flex items-center gap-2.5">
         <!-- Live Balance Widget -->
-        <div class="flex items-center gap-2 bg-slate-50 border border-slate-200/80 rounded-xl px-3 py-1.5 shadow-xs">
+        <div class="flex items-center gap-2 bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-1.5 shadow-xs">
           <div class="text-right">
             <span class="text-[9px] uppercase tracking-wider text-slate-400 font-bold block leading-none">Live Balance</span>
-            <span id="liveBalanceText" class="text-xs sm:text-sm font-bold text-slate-800 font-mono">--</span>
+            <span id="liveBalanceText" class="text-xs sm:text-sm font-bold text-slate-100 font-mono">--</span>
           </div>
-          <button id="refreshBalanceBtn" title="Refresh Balance" class="p-1 hover:bg-slate-200/70 rounded-lg text-slate-500 hover:text-slate-800 transition">
+          <button id="refreshBalanceBtn" title="Refresh Balance" class="p-1 hover:bg-[#272e3d]/70 rounded-lg text-slate-400 hover:text-slate-100 transition">
             <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
           </button>
         </div>
 
         <!-- API Config Modal Trigger -->
-        <button id="openConfigModalBtn" class="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:border-slate-300 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 shadow-xs transition">
-          <i data-lucide="key" class="w-3.5 h-3.5 text-slate-500"></i>
+        <button id="openConfigModalBtn" class="flex items-center gap-1.5 px-3 py-1.5 bg-[#151921] border border-[#242a37] hover:border-[#32394a] rounded-xl text-xs font-semibold text-slate-300 hover:bg-[#0e1015] shadow-xs transition">
+          <i data-lucide="key" class="w-3.5 h-3.5 text-slate-400"></i>
           <span>API Config</span>
         </button>
       </div>
@@ -87,12 +119,12 @@
 
   <!-- ERROR / STATUS BANNER -->
   <div id="globalAlert" class="hidden max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pt-3">
-    <div id="alertCard" class="p-3 rounded-xl border flex items-center justify-between text-xs font-medium bg-rose-50 border-rose-200 text-rose-800">
+    <div id="alertCard" class="p-3 rounded-xl border flex items-center justify-between text-xs font-medium bg-red-500/15 border-rose-200 text-rose-800">
       <div class="flex items-center gap-2">
         <i id="alertIcon" data-lucide="alert-circle" class="w-4 h-4 shrink-0"></i>
         <span id="alertMessage">Notice message here</span>
       </div>
-      <button id="closeAlertBtn" class="text-slate-400 hover:text-slate-600">
+      <button id="closeAlertBtn" class="text-slate-400 hover:text-slate-400">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
     </div>
@@ -108,10 +140,10 @@
       <div class="lg:col-span-7 space-y-4">
 
         <!-- 1. PLATFORM SELECTOR TABS (10 Platforms: YouTube, Instagram, Telegram, Facebook, Twitter, TikTok, LinkedIn, Snapchat, WhatsApp, All) -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-2.5 shadow-xs">
+        <div class="bg-[#151921] border border-[#242a37] rounded-2xl p-2.5 shadow-xs">
           <div class="flex items-center justify-between px-1 mb-2">
-            <span class="text-[11px] font-bold text-slate-500 uppercase tracking-wider flex items-center gap-1.5">
-              <i data-lucide="layers" class="w-3.5 h-3.5 text-blue-600"></i> Platform Catalog (491 Services)
+            <span class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
+              <i data-lucide="layers" class="w-3.5 h-3.5 text-red-400"></i> Platform Catalog (491 Services)
             </span>
             <span class="text-[11px] font-medium text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/60">
               ● All 9 Networks Active
@@ -122,59 +154,59 @@
               <i data-lucide="youtube" class="w-4 h-4 fill-current"></i>
               <span>YouTube</span>
             </button>
-            <button type="button" data-platform="instagram" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            <button type="button" data-platform="instagram" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
               <i data-lucide="instagram" class="w-4 h-4 text-pink-600"></i>
               <span>Instagram</span>
             </button>
-            <button type="button" data-platform="telegram" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            <button type="button" data-platform="telegram" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
               <i data-lucide="send" class="w-4 h-4 text-sky-500"></i>
               <span>Telegram</span>
             </button>
-            <button type="button" data-platform="facebook" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-              <i data-lucide="facebook" class="w-4 h-4 text-blue-600"></i>
+            <button type="button" data-platform="facebook" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
+              <i data-lucide="facebook" class="w-4 h-4 text-red-400"></i>
               <span>Facebook</span>
             </button>
-            <button type="button" data-platform="twitter" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-              <i data-lucide="twitter" class="w-4 h-4 text-slate-900"></i>
+            <button type="button" data-platform="twitter" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
+              <i data-lucide="twitter" class="w-4 h-4 text-white"></i>
               <span>Twitter / X</span>
             </button>
-            <button type="button" data-platform="tiktok" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-              <i data-lucide="music-2" class="w-4 h-4 text-slate-900"></i>
+            <button type="button" data-platform="tiktok" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
+              <i data-lucide="music-2" class="w-4 h-4 text-white"></i>
               <span>TikTok</span>
             </button>
-            <button type="button" data-platform="linkedin" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-              <i data-lucide="linkedin" class="w-4 h-4 text-blue-700"></i>
+            <button type="button" data-platform="linkedin" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
+              <i data-lucide="linkedin" class="w-4 h-4 text-red-400"></i>
               <span>LinkedIn</span>
             </button>
-            <button type="button" data-platform="snapchat" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            <button type="button" data-platform="snapchat" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
               <i data-lucide="ghost" class="w-4 h-4 text-amber-500"></i>
               <span>Snapchat</span>
             </button>
-            <button type="button" data-platform="whatsapp" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
+            <button type="button" data-platform="whatsapp" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
               <i data-lucide="message-circle" class="w-4 h-4 text-emerald-600"></i>
               <span>WhatsApp</span>
             </button>
-            <button type="button" data-platform="all" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition">
-              <i data-lucide="globe" class="w-4 h-4 text-slate-500"></i>
+            <button type="button" data-platform="all" class="platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">
+              <i data-lucide="globe" class="w-4 h-4 text-slate-400"></i>
               <span>All Panels</span>
             </button>
           </div>
         </div>
 
         <!-- 2. GLOBAL TARGET LINK CARD -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-2.5">
+        <div class="bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-2.5">
           <div class="flex items-center justify-between">
             <div class="flex items-center gap-2">
               <div id="targetPlatformIconBox" class="w-6 h-6 rounded-lg bg-red-50 text-red-600 flex items-center justify-center font-bold text-xs">
                 <i id="targetPlatformIcon" data-lucide="youtube" class="w-3.5 h-3.5"></i>
               </div>
-              <h2 id="targetLinkTitle" class="text-xs font-bold text-slate-800 uppercase tracking-wider">YouTube Target URL</h2>
+              <h2 id="targetLinkTitle" class="text-xs font-bold text-slate-100 uppercase tracking-wider">YouTube Target URL</h2>
             </div>
             <span id="targetHelperBadge" class="text-[10px] font-mono text-slate-400">Video, Shorts, or Channel</span>
           </div>
 
           <div class="relative">
-            <input type="url" id="targetLinkInput" placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/..." class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-3.5 py-2 text-xs text-slate-800 font-mono focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition">
+            <input type="url" id="targetLinkInput" placeholder="https://www.youtube.com/watch?v=... or https://youtu.be/..." class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl pl-9 pr-3.5 py-2 text-xs text-slate-100 font-mono focus:outline-none focus:ring-2 focus:ring-red-500/20 focus:border-red-500 transition">
             <i id="targetInputIcon" data-lucide="youtube" class="w-4 h-4 text-slate-400 absolute left-3 top-2.5"></i>
           </div>
         </div>
@@ -182,16 +214,16 @@
         <!-- ========================================== -->
         <!-- MODULE 1: VIEWS                             -->
         <!-- ========================================== -->
-        <div id="viewsCard" class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
+        <div id="viewsCard" class="bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-2.5 min-w-0">
-              <div class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
+              <div class="w-8 h-8 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center shrink-0">
                 <i data-lucide="eye" class="w-4 h-4"></i>
               </div>
               <div class="min-w-0">
                 <div class="flex items-center gap-1.5">
-                  <h3 id="viewsTitle" class="text-sm font-bold text-slate-900 leading-none">Views</h3>
-                  <span class="px-1.5 py-0.2 text-[9px] font-bold bg-blue-600 text-white rounded-md uppercase tracking-wider">POPULAR</span>
+                  <h3 id="viewsTitle" class="text-sm font-bold text-white leading-none">Views</h3>
+                  <span class="px-1.5 py-0.2 text-[9px] font-bold bg-red-600 text-white rounded-md uppercase tracking-wider">POPULAR</span>
                 </div>
                 <div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono mt-1 truncate">
                   <span id="viewsSubtitle">50 RUNS • ~182H 59M</span>
@@ -203,39 +235,39 @@
 
             <!-- Target Input + Price + Toggle -->
             <div class="flex items-center gap-2 shrink-0">
-              <input type="number" id="viewsTargetInput" value="10000" min="100" max="10000000" step="100" class="w-20 sm:w-24 text-right font-mono font-bold bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-blue-500">
-              <span id="viewsCostBadge" class="bg-slate-100 px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-800 text-xs whitespace-nowrap">₹950.00</span>
+              <input type="number" id="viewsTargetInput" value="10000" min="100" max="10000000" step="100" class="w-20 sm:w-24 text-right font-mono font-bold bg-[#0e1015] border border-[#242a37] rounded-xl px-2.5 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-red-500">
+              <span id="viewsCostBadge" class="bg-[#1a1f29] px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-100 text-xs whitespace-nowrap">₹950.00</span>
               
               <label class="relative inline-flex items-center cursor-pointer select-none">
                 <input type="checkbox" id="viewsToggle" checked class="sr-only peer">
-                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-[#262c3a] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-red-600"></div>
               </label>
             </div>
           </div>
 
           <!-- Quick Selector Pills + Settings Button -->
-          <div class="flex items-center justify-between pt-1 border-t border-slate-100/80">
+          <div class="flex items-center justify-between pt-1 border-t border-[#202532]/80">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Quick:</span>
-              <button type="button" class="views-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="1000">1K</button>
-              <button type="button" class="views-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="5000">5K</button>
-              <button type="button" class="views-quick-btn px-2 py-0.5 bg-blue-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="10000">10K</button>
-              <button type="button" class="views-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="25000">25K</button>
-              <button type="button" class="views-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="50000">50K</button>
+              <button type="button" class="views-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="1000">1K</button>
+              <button type="button" class="views-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="5000">5K</button>
+              <button type="button" class="views-quick-btn px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="10000">10K</button>
+              <button type="button" class="views-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="25000">25K</button>
+              <button type="button" class="views-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="50000">50K</button>
             </div>
 
-            <button type="button" id="viewsSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-600 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg transition">
+            <button type="button" id="viewsSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-400 hover:text-white bg-[#0e1015] hover:bg-[#1a1f29] border border-[#242a37] rounded-lg transition">
               <span>SETTINGS</span>
               <i data-lucide="chevron-down" id="viewsSettingsIcon" class="w-3.5 h-3.5 transition-transform duration-200"></i>
             </button>
           </div>
 
           <!-- Collapsible Settings Body (Collapsed by Default) -->
-          <div id="viewsSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-slate-100">
+          <div id="viewsSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-[#202532]">
             <div>
-              <label id="viewsServiceLabel" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">Views Service Catalog</label>
+              <label id="viewsServiceLabel" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Views Service Catalog</label>
               <div class="relative">
-                <select id="viewsServiceSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 pr-8 text-xs text-slate-800 font-medium focus:outline-none focus:border-blue-500 appearance-none truncate">
+                <select id="viewsServiceSelect" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-2 pr-8 text-xs text-slate-100 font-medium focus:outline-none focus:border-red-500 appearance-none truncate">
                 </select>
                 <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-2.5 pointer-events-none"></i>
               </div>
@@ -244,30 +276,30 @@
             <!-- Delivery Time Spread -->
             <div>
               <div class="flex items-center justify-between mb-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                   <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i> Delivery Time
                 </label>
-                <span id="viewsSpreadDurationText" class="text-[11px] font-mono font-bold text-blue-600">~182h 59m</span>
+                <span id="viewsSpreadDurationText" class="text-[11px] font-mono font-bold text-red-400">~182h 59m</span>
               </div>
-              <div class="grid grid-cols-6 gap-1 bg-slate-100 p-1 rounded-xl text-xs font-semibold text-slate-600 text-center">
-                <button type="button" class="views-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-blue-600 font-bold" data-hours="auto">Auto</button>
-                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="6">6h</button>
-                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="12">12h</button>
-                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="24">24h</button>
-                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
-                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
+              <div class="grid grid-cols-6 gap-1 bg-[#1a1f29] p-1 rounded-xl text-xs font-semibold text-slate-400 text-center">
+                <button type="button" class="views-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold" data-hours="auto">Auto</button>
+                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="6">6h</button>
+                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="12">12h</button>
+                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="24">24h</button>
+                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="48">48h</button>
+                <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="custom">Custom</button>
               </div>
 
               <!-- Custom Delivery Duration Box -->
-              <div id="viewsCustomHoursBox" class="hidden mt-2 p-2 bg-blue-50/70 border border-blue-200/80 rounded-xl flex items-center justify-between text-xs">
-                <div class="flex items-center gap-1.5 text-blue-900 font-semibold">
-                  <i data-lucide="timer" class="w-3.5 h-3.5 text-blue-600"></i>
+              <div id="viewsCustomHoursBox" class="hidden mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-white font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-red-400"></i>
                   <span>Custom Total Spread:</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <input type="number" id="viewsCustomHoursInput" value="72" min="1" max="1000" class="w-20 bg-white border border-blue-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-blue-900 text-center focus:outline-none focus:ring-1 focus:ring-blue-500">
-                  <span class="text-[11px] font-bold text-blue-700">Hours</span>
-                  <span class="text-[10px] text-blue-500 font-medium">(~<span id="viewsCustomDaysText">3.0d</span>)</span>
+                  <input type="number" id="viewsCustomHoursInput" value="72" min="1" max="1000" class="w-20 bg-[#151921] border border-red-500/40 rounded-lg px-2 py-1 text-xs font-mono font-bold text-white text-center focus:outline-none focus:ring-1 focus:ring-blue-500">
+                  <span class="text-[11px] font-bold text-red-400">Hours</span>
+                  <span class="text-[10px] text-red-500 font-medium">(~<span id="viewsCustomDaysText">3.0d</span>)</span>
                 </div>
               </div>
             </div>
@@ -276,12 +308,12 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <div>
                 <div class="flex items-center justify-between mb-1">
-                  <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Number of Runs</label>
+                  <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Number of Runs</label>
                   <span id="viewsMaxRunsHint" class="text-[10px] text-slate-400 font-mono">max 100</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <input type="number" id="viewsRunsInput" value="50" min="1" max="100" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-blue-500">
-                  <button type="button" id="viewsAutoRunsBtn" class="px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition">
+                  <input type="number" id="viewsRunsInput" value="50" min="1" max="100" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-100 focus:outline-none focus:border-red-500">
+                  <button type="button" id="viewsAutoRunsBtn" class="px-3 py-1.5 bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 text-xs font-semibold rounded-xl transition">
                     Auto
                   </button>
                 </div>
@@ -289,44 +321,44 @@
 
               <div>
                 <div class="flex items-center justify-between mb-1">
-                  <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Random Variance</label>
+                  <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Random Variance</label>
                   <span id="viewsVarianceBadge" class="text-xs font-mono font-bold text-emerald-600">±50%</span>
                 </div>
-                <input type="range" id="viewsVarianceSlider" min="10" max="50" step="5" value="50" class="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-500 mt-2">
+                <input type="range" id="viewsVarianceSlider" min="10" max="50" step="5" value="50" class="w-full h-1.5 bg-[#262c3a] rounded-lg appearance-none cursor-pointer accent-red-500 mt-2">
               </div>
             </div>
 
             <!-- Schedule Preview -->
-            <div class="bg-slate-50 rounded-xl p-3 border border-slate-200/80 space-y-2">
+            <div class="bg-[#0e1015] rounded-xl p-3 border border-[#242a37] space-y-2">
               <div class="flex items-center justify-between">
-                <span class="text-xs font-bold text-slate-700 uppercase tracking-wider flex items-center gap-1.5">
+                <span class="text-xs font-bold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
                   <i data-lucide="calendar" class="w-3.5 h-3.5 text-slate-400"></i> Schedule Preview
                 </span>
-                <button type="button" id="viewsToggleRunsBtn" class="text-xs font-semibold text-blue-600 hover:text-blue-700 flex items-center gap-1">
+                <button type="button" id="viewsToggleRunsBtn" class="text-xs font-semibold text-red-400 hover:text-red-400 flex items-center gap-1">
                   <span id="viewsToggleRunsText">View 50 Runs</span>
                   <i data-lucide="chevron-down" id="viewsToggleRunsIcon" class="w-3 h-3 transition-transform duration-200"></i>
                 </button>
               </div>
 
               <div class="grid grid-cols-3 gap-2 text-center">
-                <div class="bg-white p-1.5 rounded-lg border border-slate-200/70">
-                  <span id="viewsPreviewRunsCount" class="text-sm sm:text-base font-bold text-slate-800 font-mono block">50</span>
+                <div class="bg-[#151921] p-1.5 rounded-lg border border-[#242a37]/70">
+                  <span id="viewsPreviewRunsCount" class="text-sm sm:text-base font-bold text-slate-100 font-mono block">50</span>
                   <span class="text-[9px] text-slate-400 uppercase tracking-wider">runs</span>
                 </div>
-                <div class="bg-white p-1.5 rounded-lg border border-slate-200/70">
-                  <span id="viewsPreviewAvgInterval" class="text-sm sm:text-base font-bold text-slate-800 font-mono block">~3h</span>
+                <div class="bg-[#151921] p-1.5 rounded-lg border border-[#242a37]/70">
+                  <span id="viewsPreviewAvgInterval" class="text-sm sm:text-base font-bold text-slate-100 font-mono block">~3h</span>
                   <span class="text-[9px] text-slate-400 uppercase tracking-wider">interval</span>
                 </div>
-                <div class="bg-white p-1.5 rounded-lg border border-slate-200/70">
-                  <span id="viewsPreviewFinishDate" class="text-[11px] font-bold text-slate-800 font-mono block truncate pt-0.5">--</span>
+                <div class="bg-[#151921] p-1.5 rounded-lg border border-[#242a37]/70">
+                  <span id="viewsPreviewFinishDate" class="text-[11px] font-bold text-slate-100 font-mono block truncate pt-0.5">--</span>
                   <span class="text-[9px] text-slate-400 uppercase tracking-wider">finish</span>
                 </div>
               </div>
 
-              <div id="viewsRunsWrapper" class="hidden space-y-2 pt-2 border-t border-slate-200/60">
+              <div id="viewsRunsWrapper" class="hidden space-y-2 pt-2 border-t border-[#242a37]/60">
                 <div id="viewsRunsTableBody" class="max-h-48 overflow-y-auto space-y-1 pr-1">
                 </div>
-                <div class="pt-1 flex items-center justify-between text-xs font-mono font-bold text-slate-700 border-t border-slate-200/80">
+                <div class="pt-1 flex items-center justify-between text-xs font-mono font-bold text-slate-300 border-t border-[#242a37]">
                   <span>Target Met:</span>
                   <span id="viewsTotalSumBadge" class="text-emerald-600">10,000 / 10,000 (100% Met)</span>
                 </div>
@@ -338,14 +370,14 @@
         <!-- ========================================== -->
         <!-- MODULE 2: LIKES                             -->
         <!-- ========================================== -->
-        <div id="likesCard" class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
+        <div id="likesCard" class="bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-2.5 min-w-0">
-              <div class="w-8 h-8 rounded-xl bg-rose-50 text-rose-500 flex items-center justify-center shrink-0">
+              <div class="w-8 h-8 rounded-xl bg-red-500/15 text-red-500 flex items-center justify-center shrink-0">
                 <i data-lucide="heart" class="w-4 h-4 fill-current"></i>
               </div>
               <div class="min-w-0">
-                <h3 id="likesTitle" class="text-sm font-bold text-slate-900 leading-none">Likes</h3>
+                <h3 id="likesTitle" class="text-sm font-bold text-white leading-none">Likes</h3>
                 <div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono mt-1 truncate">
                   <span id="likesSubtitle">12 RUNS • ~89H 58M</span>
                   <span>•</span>
@@ -356,40 +388,40 @@
 
             <!-- Target Input + Price + Toggle -->
             <div class="flex items-center gap-2 shrink-0">
-              <input type="number" id="likesTargetInput" value="310" min="10" max="500000" step="10" class="w-20 sm:w-24 text-right font-mono font-bold bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-rose-500">
-              <span id="likesCostBadge" class="bg-slate-100 px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-800 text-xs whitespace-nowrap">₹26.35</span>
+              <input type="number" id="likesTargetInput" value="310" min="10" max="500000" step="10" class="w-20 sm:w-24 text-right font-mono font-bold bg-[#0e1015] border border-[#242a37] rounded-xl px-2.5 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-red-500">
+              <span id="likesCostBadge" class="bg-[#1a1f29] px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-100 text-xs whitespace-nowrap">₹26.35</span>
               
               <label class="relative inline-flex items-center cursor-pointer select-none">
                 <input type="checkbox" id="likesToggle" checked class="sr-only peer">
-                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-rose-500"></div>
+                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-[#262c3a] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-red-600"></div>
               </label>
             </div>
           </div>
 
           <!-- Quick Selector Pills + Settings Button -->
-          <div class="flex items-center justify-between pt-1 border-t border-slate-100/80">
+          <div class="flex items-center justify-between pt-1 border-t border-[#202532]/80">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Quick:</span>
-              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="50">50</button>
-              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="100">100</button>
-              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="250">250</button>
-              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-rose-500 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="310">310</button>
-              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="500">500</button>
-              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="1000">1K</button>
+              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="50">50</button>
+              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="100">100</button>
+              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="250">250</button>
+              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="310">310</button>
+              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="500">500</button>
+              <button type="button" class="likes-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="1000">1K</button>
             </div>
 
-            <button type="button" id="likesSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-600 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg transition">
+            <button type="button" id="likesSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-400 hover:text-white bg-[#0e1015] hover:bg-[#1a1f29] border border-[#242a37] rounded-lg transition">
               <span>SETTINGS</span>
               <i data-lucide="chevron-down" id="likesSettingsIcon" class="w-3.5 h-3.5 transition-transform duration-200"></i>
             </button>
           </div>
 
           <!-- Collapsible Settings Body (Collapsed by Default) -->
-          <div id="likesSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-slate-100">
+          <div id="likesSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-[#202532]">
             <div>
-              <label id="likesServiceLabel" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">Likes Service Catalog</label>
+              <label id="likesServiceLabel" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Likes Service Catalog</label>
               <div class="relative">
-                <select id="likesServiceSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 pr-8 text-xs text-slate-800 font-medium focus:outline-none focus:border-rose-500 appearance-none truncate">
+                <select id="likesServiceSelect" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-2 pr-8 text-xs text-slate-100 font-medium focus:outline-none focus:border-red-500 appearance-none truncate">
                 </select>
                 <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-2.5 pointer-events-none"></i>
               </div>
@@ -397,40 +429,40 @@
 
             <div>
               <div class="flex items-center justify-between mb-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                   <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i> Delivery Time
                 </label>
-                <span id="likesSpreadDurationText" class="text-[11px] font-mono font-bold text-rose-600">~89h 58m</span>
+                <span id="likesSpreadDurationText" class="text-[11px] font-mono font-bold text-red-400">~89h 58m</span>
               </div>
-              <div class="grid grid-cols-6 gap-1 bg-slate-100 p-1 rounded-xl text-xs font-semibold text-slate-600 text-center">
-                <button type="button" class="likes-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-rose-600 font-bold" data-hours="auto">Auto</button>
-                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="6">6h</button>
-                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="12">12h</button>
-                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="24">24h</button>
-                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
-                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
+              <div class="grid grid-cols-6 gap-1 bg-[#1a1f29] p-1 rounded-xl text-xs font-semibold text-slate-400 text-center">
+                <button type="button" class="likes-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold" data-hours="auto">Auto</button>
+                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="6">6h</button>
+                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="12">12h</button>
+                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="24">24h</button>
+                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="48">48h</button>
+                <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="custom">Custom</button>
               </div>
 
               <!-- Custom Delivery Duration Box -->
-              <div id="likesCustomHoursBox" class="hidden mt-2 p-2 bg-rose-50/70 border border-rose-200/80 rounded-xl flex items-center justify-between text-xs">
-                <div class="flex items-center gap-1.5 text-rose-900 font-semibold">
-                  <i data-lucide="timer" class="w-3.5 h-3.5 text-rose-600"></i>
+              <div id="likesCustomHoursBox" class="hidden mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-white font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-red-400"></i>
                   <span>Custom Total Spread:</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <input type="number" id="likesCustomHoursInput" value="48" min="1" max="1000" class="w-20 bg-white border border-rose-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-rose-900 text-center focus:outline-none focus:ring-1 focus:ring-rose-500">
-                  <span class="text-[11px] font-bold text-rose-700">Hours</span>
-                  <span class="text-[10px] text-rose-500 font-medium">(~<span id="likesCustomDaysText">2.0d</span>)</span>
+                  <input type="number" id="likesCustomHoursInput" value="48" min="1" max="1000" class="w-20 bg-[#151921] border border-red-500/40 rounded-lg px-2 py-1 text-xs font-mono font-bold text-white text-center focus:outline-none focus:ring-1 focus:ring-rose-500">
+                  <span class="text-[11px] font-bold text-red-400">Hours</span>
+                  <span class="text-[10px] text-red-500 font-medium">(~<span id="likesCustomDaysText">2.0d</span>)</span>
                 </div>
               </div>
             </div>
 
             <div class="flex items-center gap-2">
               <div class="flex-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1 block">Number of Runs</label>
-                <input type="number" id="likesRunsInput" value="12" min="1" max="50" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-rose-500">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1 block">Number of Runs</label>
+                <input type="number" id="likesRunsInput" value="12" min="1" max="50" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-100 focus:outline-none focus:border-red-500">
               </div>
-              <button type="button" id="likesAutoRunsBtn" class="mt-4 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition">
+              <button type="button" id="likesAutoRunsBtn" class="mt-4 px-3 py-1.5 bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 text-xs font-semibold rounded-xl transition">
                 Auto
               </button>
             </div>
@@ -440,14 +472,14 @@
         <!-- ========================================== -->
         <!-- MODULE 3: COMMENTS                          -->
         <!-- ========================================== -->
-        <div id="commentsCard" class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
+        <div id="commentsCard" class="bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-2.5 min-w-0">
-              <div class="w-8 h-8 rounded-xl bg-sky-50 text-sky-500 flex items-center justify-center shrink-0">
+              <div class="w-8 h-8 rounded-xl bg-red-500/15 text-sky-500 flex items-center justify-center shrink-0">
                 <i data-lucide="message-square" class="w-4 h-4"></i>
               </div>
               <div class="min-w-0">
-                <h3 id="commentsTitle" class="text-sm font-bold text-slate-900 leading-none">Comments</h3>
+                <h3 id="commentsTitle" class="text-sm font-bold text-white leading-none">Comments</h3>
                 <div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono mt-1 truncate">
                   <span id="commentsSubtitle">8 RUNS • ~28H 5M</span>
                   <span>•</span>
@@ -458,27 +490,27 @@
 
             <!-- Target Input + Price + Toggle -->
             <div class="flex items-center gap-2 shrink-0">
-              <input type="number" id="commentsTargetInput" value="20" min="1" max="10000" step="1" class="w-20 sm:w-24 text-right font-mono font-bold bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-sky-500">
-              <span id="commentsCostBadge" class="bg-slate-100 px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-800 text-xs whitespace-nowrap">₹4.80</span>
+              <input type="number" id="commentsTargetInput" value="20" min="1" max="10000" step="1" class="w-20 sm:w-24 text-right font-mono font-bold bg-[#0e1015] border border-[#242a37] rounded-xl px-2.5 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-red-500">
+              <span id="commentsCostBadge" class="bg-[#1a1f29] px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-100 text-xs whitespace-nowrap">₹4.80</span>
               
               <label class="relative inline-flex items-center cursor-pointer select-none">
                 <input type="checkbox" id="commentsToggle" checked class="sr-only peer">
-                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-sky-500"></div>
+                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-[#262c3a] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-red-600"></div>
               </label>
             </div>
           </div>
 
           <!-- Quick Selector Pills + Settings Button -->
-          <div class="flex items-center justify-between pt-1 border-t border-slate-100/80">
+          <div class="flex items-center justify-between pt-1 border-t border-[#202532]/80">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Quick:</span>
-              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="5">5</button>
-              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="10">10</button>
-              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-sky-500 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="20">20</button>
-              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="50">50</button>
+              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="5">5</button>
+              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="10">10</button>
+              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="20">20</button>
+              <button type="button" class="comments-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="50">50</button>
             </div>
 
-            <button type="button" id="commentsSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-600 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg transition">
+            <button type="button" id="commentsSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-400 hover:text-white bg-[#0e1015] hover:bg-[#1a1f29] border border-[#242a37] rounded-lg transition">
               <span>SETTINGS</span>
               <i data-lucide="chevron-down" id="commentsSettingsIcon" class="w-3.5 h-3.5 transition-transform duration-200"></i>
             </button>
@@ -487,10 +519,10 @@
           <!-- Compact Custom Comments Input Area -->
           <div class="space-y-1 pt-1">
             <div class="flex items-center justify-between">
-              <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider">Comments Template (1 / line)</label>
+              <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider">Comments Template (1 / line)</label>
               <span id="commentsCountLabel" class="text-[10px] font-mono text-slate-400">8 lines</span>
             </div>
-            <textarea id="commentsTextInput" rows="2" class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs text-slate-800 font-sans focus:outline-none focus:border-sky-500 transition resize-none">Great perspective on this video! 🔥
+            <textarea id="commentsTextInput" rows="2" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl p-2.5 text-xs text-slate-100 font-sans focus:outline-none focus:border-red-500 transition resize-none">Great perspective on this video! 🔥
 Quality content, really enjoyed watching 🙌
 Subscribed! Keep up the great uploads 🚀
 Outstanding editing and presentation 👏
@@ -501,11 +533,11 @@ Top quality content! Keep it going 🔥👏</textarea>
           </div>
 
           <!-- Collapsible Settings Body (Collapsed by Default) -->
-          <div id="commentsSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-slate-100">
+          <div id="commentsSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-[#202532]">
             <div>
-              <label id="commentsServiceLabel" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">Comments Service Catalog</label>
+              <label id="commentsServiceLabel" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Comments Service Catalog</label>
               <div class="relative">
-                <select id="commentsServiceSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 pr-8 text-xs text-slate-800 font-medium focus:outline-none focus:border-sky-500 appearance-none truncate">
+                <select id="commentsServiceSelect" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-2 pr-8 text-xs text-slate-100 font-medium focus:outline-none focus:border-red-500 appearance-none truncate">
                 </select>
                 <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-2.5 pointer-events-none"></i>
               </div>
@@ -513,28 +545,28 @@ Top quality content! Keep it going 🔥👏</textarea>
 
             <div>
               <div class="flex items-center justify-between mb-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                   <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i> Delivery Time
                 </label>
-                <span id="commentsSpreadDurationText" class="text-[11px] font-mono font-bold text-sky-600">~28h 5m</span>
+                <span id="commentsSpreadDurationText" class="text-[11px] font-mono font-bold text-red-400">~28h 5m</span>
               </div>
-              <div class="grid grid-cols-6 gap-1 bg-slate-100 p-1 rounded-xl text-xs font-semibold text-slate-600 text-center">
-                <button type="button" class="comments-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-sky-600 font-bold" data-hours="auto">Auto</button>
-                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="6">6h</button>
-                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="12">12h</button>
-                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="24">24h</button>
-                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
-                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
+              <div class="grid grid-cols-6 gap-1 bg-[#1a1f29] p-1 rounded-xl text-xs font-semibold text-slate-400 text-center">
+                <button type="button" class="comments-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold" data-hours="auto">Auto</button>
+                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="6">6h</button>
+                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="12">12h</button>
+                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="24">24h</button>
+                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="48">48h</button>
+                <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="custom">Custom</button>
               </div>
 
               <!-- Custom Delivery Duration Box -->
-              <div id="commentsCustomHoursBox" class="hidden mt-2 p-2 bg-sky-50/70 border border-sky-200/80 rounded-xl flex items-center justify-between text-xs">
+              <div id="commentsCustomHoursBox" class="hidden mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center justify-between text-xs">
                 <div class="flex items-center gap-1.5 text-sky-900 font-semibold">
-                  <i data-lucide="timer" class="w-3.5 h-3.5 text-sky-600"></i>
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-red-400"></i>
                   <span>Custom Total Spread:</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <input type="number" id="commentsCustomHoursInput" value="24" min="1" max="1000" class="w-20 bg-white border border-sky-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-sky-900 text-center focus:outline-none focus:ring-1 focus:ring-sky-500">
+                  <input type="number" id="commentsCustomHoursInput" value="24" min="1" max="1000" class="w-20 bg-[#151921] border border-red-500/40 rounded-lg px-2 py-1 text-xs font-mono font-bold text-sky-900 text-center focus:outline-none focus:ring-1 focus:ring-sky-500">
                   <span class="text-[11px] font-bold text-sky-700">Hours</span>
                   <span class="text-[10px] text-sky-500 font-medium">(~<span id="commentsCustomDaysText">1.0d</span>)</span>
                 </div>
@@ -543,10 +575,10 @@ Top quality content! Keep it going 🔥👏</textarea>
 
             <div class="flex items-center gap-2">
               <div class="flex-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1 block">Number of Runs</label>
-                <input type="number" id="commentsRunsInput" value="8" min="1" max="50" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-sky-500">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1 block">Number of Runs</label>
+                <input type="number" id="commentsRunsInput" value="8" min="1" max="50" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-100 focus:outline-none focus:border-red-500">
               </div>
-              <button type="button" id="commentsAutoRunsBtn" class="mt-4 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition">
+              <button type="button" id="commentsAutoRunsBtn" class="mt-4 px-3 py-1.5 bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 text-xs font-semibold rounded-xl transition">
                 Auto
               </button>
             </div>
@@ -556,14 +588,14 @@ Top quality content! Keep it going 🔥👏</textarea>
         <!-- ========================================== -->
         <!-- MODULE 4: SUBSCRIBERS / FOLLOWERS           -->
         <!-- ========================================== -->
-        <div id="followersCard" class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
+        <div id="followersCard" class="bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5 transition-all">
           <div class="flex items-center justify-between gap-3">
             <div class="flex items-center gap-2.5 min-w-0">
-              <div class="w-8 h-8 rounded-xl bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+              <div class="w-8 h-8 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center shrink-0">
                 <i data-lucide="users" class="w-4 h-4"></i>
               </div>
               <div class="min-w-0">
-                <h3 id="followersTitle" class="text-sm font-bold text-slate-900 leading-none">Subscribers</h3>
+                <h3 id="followersTitle" class="text-sm font-bold text-white leading-none">Subscribers</h3>
                 <div class="flex items-center gap-1.5 text-[11px] text-slate-400 font-mono mt-1 truncate">
                   <span id="followersSubtitle">5 RUNS • ~24H</span>
                   <span>•</span>
@@ -574,39 +606,39 @@ Top quality content! Keep it going 🔥👏</textarea>
 
             <!-- Target Input + Price + Toggle -->
             <div class="flex items-center gap-2 shrink-0">
-              <input type="number" id="followersTargetInput" value="100" min="10" max="50000" step="10" class="w-20 sm:w-24 text-right font-mono font-bold bg-slate-50 border border-slate-200 rounded-xl px-2.5 py-1.5 text-xs text-slate-800 focus:outline-none focus:border-purple-500">
-              <span id="followersCostBadge" class="bg-slate-100 px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-800 text-xs whitespace-nowrap">₹38.00</span>
+              <input type="number" id="followersTargetInput" value="100" min="10" max="50000" step="10" class="w-20 sm:w-24 text-right font-mono font-bold bg-[#0e1015] border border-[#242a37] rounded-xl px-2.5 py-1.5 text-xs text-slate-100 focus:outline-none focus:border-red-500">
+              <span id="followersCostBadge" class="bg-[#1a1f29] px-2.5 py-1.5 rounded-xl font-bold font-mono text-slate-100 text-xs whitespace-nowrap">₹38.00</span>
               
               <label class="relative inline-flex items-center cursor-pointer select-none">
                 <input type="checkbox" id="followersToggle" class="sr-only peer">
-                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-slate-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-purple-600"></div>
+                <div class="w-10 h-5 sm:w-11 sm:h-6 bg-[#262c3a] peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-4 after:w-4 sm:after:h-5 sm:after:w-5 after:transition-all peer-checked:bg-red-600"></div>
               </label>
             </div>
           </div>
 
           <!-- Quick Selector Pills + Settings Button -->
-          <div class="flex items-center justify-between pt-1 border-t border-slate-100/80">
+          <div class="flex items-center justify-between pt-1 border-t border-[#202532]/80">
             <div class="flex items-center gap-1.5 flex-wrap">
               <span class="text-[10px] text-slate-400 font-bold uppercase tracking-wider">Quick:</span>
-              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-purple-50 hover:text-purple-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="25">25</button>
-              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-purple-50 hover:text-purple-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="50">50</button>
+              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="25">25</button>
+              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="50">50</button>
               <button type="button" class="followers-quick-btn px-2 py-0.5 bg-purple-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs" data-qty="100">100</button>
-              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-purple-50 hover:text-purple-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="250">250</button>
-              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-purple-50 hover:text-purple-600 text-slate-600 text-[10px] font-mono rounded-lg transition" data-qty="500">500</button>
+              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="250">250</button>
+              <button type="button" class="followers-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition" data-qty="500">500</button>
             </div>
 
-            <button type="button" id="followersSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-600 hover:text-slate-900 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-lg transition">
+            <button type="button" id="followersSettingsBtn" class="flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-slate-400 hover:text-white bg-[#0e1015] hover:bg-[#1a1f29] border border-[#242a37] rounded-lg transition">
               <span>SETTINGS</span>
               <i data-lucide="chevron-down" id="followersSettingsIcon" class="w-3.5 h-3.5 transition-transform duration-200"></i>
             </button>
           </div>
 
           <!-- Collapsible Settings Body (Collapsed by Default) -->
-          <div id="followersSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-slate-100">
+          <div id="followersSettingsPanel" class="hidden space-y-3.5 pt-3 border-t border-[#202532]">
             <div>
-              <label id="followersServiceLabel" class="block text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1">Subscribers Service Catalog</label>
+              <label id="followersServiceLabel" class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Subscribers Service Catalog</label>
               <div class="relative">
-                <select id="followersServiceSelect" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 pr-8 text-xs text-slate-800 font-medium focus:outline-none focus:border-purple-500 appearance-none truncate">
+                <select id="followersServiceSelect" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-2 pr-8 text-xs text-slate-100 font-medium focus:outline-none focus:border-red-500 appearance-none truncate">
                 </select>
                 <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-slate-400 absolute right-2.5 top-2.5 pointer-events-none"></i>
               </div>
@@ -614,29 +646,29 @@ Top quality content! Keep it going 🔥👏</textarea>
 
             <div>
               <div class="flex items-center justify-between mb-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider flex items-center gap-1">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1">
                   <i data-lucide="clock" class="w-3 h-3 text-slate-400"></i> Delivery Time
                 </label>
-                <span id="followersSpreadDurationText" class="text-[11px] font-mono font-bold text-purple-600">~24h</span>
+                <span id="followersSpreadDurationText" class="text-[11px] font-mono font-bold text-red-400">~24h</span>
               </div>
-              <div class="grid grid-cols-6 gap-1 bg-slate-100 p-1 rounded-xl text-xs font-semibold text-slate-600 text-center">
-                <button type="button" class="followers-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-purple-600 font-bold" data-hours="auto">Auto</button>
-                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="6">6h</button>
-                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="12">12h</button>
-                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="24">24h</button>
-                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
-                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
+              <div class="grid grid-cols-6 gap-1 bg-[#1a1f29] p-1 rounded-xl text-xs font-semibold text-slate-400 text-center">
+                <button type="button" class="followers-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold" data-hours="auto">Auto</button>
+                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="6">6h</button>
+                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="12">12h</button>
+                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="24">24h</button>
+                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="48">48h</button>
+                <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-white" data-hours="custom">Custom</button>
               </div>
 
               <!-- Custom Delivery Duration Box -->
-              <div id="followersCustomHoursBox" class="hidden mt-2 p-2 bg-purple-50/70 border border-purple-200/80 rounded-xl flex items-center justify-between text-xs">
-                <div class="flex items-center gap-1.5 text-purple-900 font-semibold">
-                  <i data-lucide="timer" class="w-3.5 h-3.5 text-purple-600"></i>
+              <div id="followersCustomHoursBox" class="hidden mt-2 p-2 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-white font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-red-400"></i>
                   <span>Custom Total Spread:</span>
                 </div>
                 <div class="flex items-center gap-1.5">
-                  <input type="number" id="followersCustomHoursInput" value="48" min="1" max="1000" class="w-20 bg-white border border-purple-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-purple-900 text-center focus:outline-none focus:ring-1 focus:ring-purple-500">
-                  <span class="text-[11px] font-bold text-purple-700">Hours</span>
+                  <input type="number" id="followersCustomHoursInput" value="48" min="1" max="1000" class="w-20 bg-[#151921] border border-red-500/40 rounded-lg px-2 py-1 text-xs font-mono font-bold text-white text-center focus:outline-none focus:ring-1 focus:ring-purple-500">
+                  <span class="text-[11px] font-bold text-red-400">Hours</span>
                   <span class="text-[10px] text-purple-500 font-medium">(~<span id="followersCustomDaysText">2.0d</span>)</span>
                 </div>
               </div>
@@ -644,10 +676,10 @@ Top quality content! Keep it going 🔥👏</textarea>
 
             <div class="flex items-center gap-2">
               <div class="flex-1">
-                <label class="text-[11px] font-bold text-slate-600 uppercase tracking-wider mb-1 block">Number of Runs</label>
-                <input type="number" id="followersRunsInput" value="5" min="1" max="25" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-800 focus:outline-none focus:border-purple-500">
+                <label class="text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1 block">Number of Runs</label>
+                <input type="number" id="followersRunsInput" value="5" min="1" max="25" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-1.5 text-xs font-mono font-bold text-slate-100 focus:outline-none focus:border-red-500">
               </div>
-              <button type="button" id="followersAutoRunsBtn" class="mt-4 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-semibold rounded-xl transition">
+              <button type="button" id="followersAutoRunsBtn" class="mt-4 px-3 py-1.5 bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 text-xs font-semibold rounded-xl transition">
                 Auto
               </button>
             </div>
@@ -661,52 +693,52 @@ Top quality content! Keep it going 🔥👏</textarea>
       <div class="lg:col-span-5 lg:sticky lg:top-20 self-start space-y-4">
 
         <!-- MASTER RUNNER CARD -->
-        <div class="bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5">
-          <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+        <div class="bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-3.5">
+          <div class="flex items-center justify-between border-b border-[#202532] pb-2.5">
             <div class="flex items-center gap-2">
               <div class="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center">
                 <i data-lucide="zap" class="w-4 h-4 fill-current"></i>
               </div>
               <div>
-                <h2 class="text-xs sm:text-sm font-bold text-slate-800 tracking-tight">Full Engagement Runner</h2>
+                <h2 class="text-xs sm:text-sm font-bold text-slate-100 tracking-tight">Full Engagement Runner</h2>
                 <p id="masterPlatformSubtitle" class="text-[10px] text-slate-400">YouTube Orchestrator</p>
               </div>
             </div>
-            <span id="runnerStatusBadge" class="px-2 py-0.5 bg-slate-100 text-slate-600 text-[9px] font-bold rounded-md font-mono uppercase tracking-wider">
+            <span id="runnerStatusBadge" class="px-2 py-0.5 bg-[#1a1f29] text-slate-400 text-[9px] font-bold rounded-md font-mono uppercase tracking-wider">
               IDLE
             </span>
           </div>
 
           <!-- Total Cost Display -->
-          <div class="bg-gradient-to-br from-blue-50/90 to-indigo-50/60 border border-blue-200/70 rounded-xl p-3.5">
+          <div class="bg-[#12141a] border border-[#272d3b] rounded-xl p-3.5 shadow-sm">
             <div class="flex items-center justify-between">
               <div>
-                <span class="text-[9px] uppercase font-bold text-blue-700 tracking-wider block">Total Engagement Cost</span>
-                <span id="masterTotalCost" class="text-xl sm:text-2xl font-bold font-mono text-blue-700 tracking-tight">₹981.15</span>
+                <span class="text-[9px] uppercase font-bold text-slate-400 tracking-wider block">Total Engagement Cost</span>
+                <span id="masterTotalCost" class="text-xl sm:text-2xl font-extrabold font-mono text-white tracking-tight">₹981.15</span>
               </div>
               <div class="text-right">
-                <span class="text-[9px] text-slate-500 font-medium block">Active:</span>
-                <span id="masterActiveModulesCount" class="text-[11px] font-bold text-slate-700 font-mono">3 / 4 Enabled</span>
+                <span class="text-[9px] text-slate-400 font-medium block">Active:</span>
+                <span id="masterActiveModulesCount" class="text-[11px] font-bold text-red-400 font-mono">3 / 4 Enabled</span>
               </div>
             </div>
 
             <!-- Active Services Breakdown -->
-            <div id="masterModulesList" class="mt-2.5 pt-2.5 border-t border-blue-200/60 space-y-1 text-xs font-mono">
-              <div id="summaryRowViews" class="flex items-center justify-between text-slate-700">
-                <span class="flex items-center gap-1.5"><i data-lucide="eye" class="w-3 h-3 text-blue-600"></i> Views</span>
-                <span id="summaryCostViews" class="font-bold text-slate-900">₹950.00</span>
+            <div id="masterModulesList" class="mt-2.5 pt-2.5 border-t border-[#202532] space-y-1 text-xs font-mono">
+              <div id="summaryRowViews" class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-1.5"><i data-lucide="eye" class="w-3 h-3 text-red-400"></i> Views</span>
+                <span id="summaryCostViews" class="font-bold text-white">₹950.00</span>
               </div>
-              <div id="summaryRowLikes" class="flex items-center justify-between text-slate-700">
-                <span class="flex items-center gap-1.5"><i data-lucide="heart" class="w-3 h-3 text-rose-500"></i> Likes</span>
-                <span id="summaryCostLikes" class="font-bold text-slate-900">₹26.35</span>
+              <div id="summaryRowLikes" class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-1.5"><i data-lucide="heart" class="w-3 h-3 text-red-500"></i> Likes</span>
+                <span id="summaryCostLikes" class="font-bold text-white">₹26.35</span>
               </div>
-              <div id="summaryRowComments" class="flex items-center justify-between text-slate-700">
-                <span class="flex items-center gap-1.5"><i data-lucide="message-square" class="w-3 h-3 text-sky-500"></i> Comments</span>
-                <span id="summaryCostComments" class="font-bold text-slate-900">₹4.80</span>
+              <div id="summaryRowComments" class="flex items-center justify-between text-slate-300">
+                <span class="flex items-center gap-1.5"><i data-lucide="message-square" class="w-3 h-3 text-red-400"></i> Comments</span>
+                <span id="summaryCostComments" class="font-bold text-white">₹4.80</span>
               </div>
-              <div id="summaryRowFollowers" class="flex items-center justify-between text-slate-700 opacity-30 line-through">
-                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-3 h-3 text-purple-600"></i> <span id="summaryFollowersLabel">Subscribers</span></span>
-                <span id="summaryCostFollowers" class="font-bold text-slate-900">--</span>
+              <div id="summaryRowFollowers" class="flex items-center justify-between text-slate-300 opacity-30 line-through">
+                <span class="flex items-center gap-1.5"><i data-lucide="users" class="w-3 h-3 text-red-400"></i> <span id="summaryFollowersLabel">Subscribers</span></span>
+                <span id="summaryCostFollowers" class="font-bold text-white">--</span>
               </div>
             </div>
           </div>
@@ -731,8 +763,8 @@ Top quality content! Keep it going 🔥👏</textarea>
           </div>
 
           <!-- Instant Full Order Button -->
-          <button id="placeInstantFullOrderBtn" class="w-full py-2 bg-slate-50 hover:bg-slate-100 active:scale-95 text-slate-700 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 border border-slate-200">
-            <i data-lucide="send" class="w-3 h-3 text-blue-600"></i>
+          <button id="placeInstantFullOrderBtn" class="w-full py-2 bg-[#0e1015] hover:bg-[#1a1f29] active:scale-95 text-slate-300 text-xs font-bold rounded-xl transition flex items-center justify-center gap-1.5 border border-[#242a37]">
+            <i data-lucide="send" class="w-3 h-3 text-red-400"></i>
             <span>Instant Full Order (All Active)</span>
           </button>
         </div>
@@ -747,7 +779,7 @@ Top quality content! Keep it going 🔥👏</textarea>
             <button id="clearLogsBtn" class="text-[10px] text-slate-400 hover:text-slate-200 transition">Clear</button>
           </div>
           <div id="terminalBody" class="mt-2 font-mono text-[11px] h-40 overflow-y-auto space-y-1 text-slate-300">
-            <div class="text-slate-500">[INIT] Multi-Service Anti-Bot Organic Runner ready.</div>
+            <div class="text-slate-400">[INIT] Multi-Service Anti-Bot Organic Runner ready.</div>
           </div>
         </div>
 
@@ -760,16 +792,16 @@ Top quality content! Keep it going 🔥👏</textarea>
     <!-- ============================================================== -->
     <!-- BOTTOM SECTION: FULL-WIDTH (100%) MY ORDERS & DISPATCH TRACKER -->
     <!-- ============================================================== -->
-    <div class="w-full bg-white border border-slate-200/90 rounded-2xl p-4 sm:p-5 shadow-xs space-y-4">
-      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-slate-100 pb-3.5">
+    <div class="w-full bg-[#151921] border border-[#242a37] rounded-2xl p-4 sm:p-5 shadow-xs space-y-4">
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-[#202532] pb-3.5">
         <div class="flex items-center gap-2.5">
-          <div class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-sm shadow-xs">
+          <div class="w-8 h-8 rounded-xl bg-red-500/15 text-red-400 flex items-center justify-center font-bold text-sm shadow-xs">
             <i data-lucide="package-check" class="w-4 h-4"></i>
           </div>
           <div>
             <div class="flex items-center gap-2">
-              <h2 class="text-sm font-bold text-slate-800 tracking-tight">My Orders</h2>
-              <span id="ordersTotalCountBadge" class="px-2 py-0.5 text-[10px] font-bold bg-slate-100 text-slate-700 rounded-full font-mono">0</span>
+              <h2 class="text-sm font-bold text-slate-100 tracking-tight">My Orders</h2>
+              <span id="ordersTotalCountBadge" class="px-2 py-0.5 text-[10px] font-bold bg-[#1a1f29] text-slate-300 rounded-full font-mono">0</span>
               <span id="ordersLastSyncedText" class="text-[10px] text-slate-400 font-mono hidden md:inline">• Synced</span>
             </div>
             <p class="text-[11px] text-slate-400">Live tracking, multi-order status fetch & execution history</p>
@@ -777,17 +809,17 @@ Top quality content! Keep it going 🔥👏</textarea>
         </div>
 
         <div class="flex flex-wrap items-center gap-2">
-          <label class="flex items-center gap-1.5 px-3 py-1.5 bg-slate-50 hover:bg-slate-100 border border-slate-200 rounded-xl text-xs font-medium text-slate-600 cursor-pointer transition select-none">
-            <input type="checkbox" id="autoSyncOrdersToggle" class="rounded text-blue-600 focus:ring-0 cursor-pointer">
+          <label class="flex items-center gap-1.5 px-3 py-1.5 bg-[#0e1015] hover:bg-[#1a1f29] border border-[#242a37] rounded-xl text-xs font-medium text-slate-400 cursor-pointer transition select-none">
+            <input type="checkbox" id="autoSyncOrdersToggle" class="rounded text-red-400 focus:ring-0 cursor-pointer">
             <span class="text-[11px] font-semibold">Auto-Sync (30s)</span>
           </label>
 
-          <button id="openImportOrdersModalBtn" class="flex items-center gap-1.5 px-3 py-1.5 bg-white border border-slate-200 hover:border-slate-300 rounded-xl text-xs font-semibold text-slate-700 hover:bg-slate-50 transition shadow-xs">
-            <i data-lucide="download" class="w-3.5 h-3.5 text-slate-500"></i>
+          <button id="openImportOrdersModalBtn" class="flex items-center gap-1.5 px-3 py-1.5 bg-[#151921] border border-[#242a37] hover:border-[#32394a] rounded-xl text-xs font-semibold text-slate-300 hover:bg-[#0e1015] transition shadow-xs">
+            <i data-lucide="download" class="w-3.5 h-3.5 text-slate-400"></i>
             <span>Import / Add IDs</span>
           </button>
 
-          <button id="syncOrdersBtn" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold rounded-xl shadow-xs transition">
+          <button id="syncOrdersBtn" class="flex items-center gap-1.5 px-3.5 py-1.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-600/30 active:scale-95 text-white text-xs font-bold rounded-xl shadow-xs transition">
             <i id="syncOrdersIcon" data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
             <span>Fetch / Sync All Orders</span>
           </button>
@@ -796,26 +828,26 @@ Top quality content! Keep it going 🔥👏</textarea>
 
       <!-- Filters & Search Toolbar -->
       <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-3 pt-0.5">
-        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs font-semibold text-slate-600" id="orderStatusTabs">
-          <button type="button" data-filter="all" class="order-tab-btn px-2.5 py-1 rounded-lg bg-blue-600 text-white shadow-xs transition">All <span id="tabCountAll" class="text-[10px] opacity-80">(0)</span></button>
-          <button type="button" data-filter="Pending" class="order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Pending <span id="tabCountPending" class="text-[10px] text-slate-500 font-mono">(0)</span></button>
-          <button type="button" data-filter="In progress" class="order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">In progress <span id="tabCountInProgress" class="text-[10px] text-slate-500 font-mono">(0)</span></button>
-          <button type="button" data-filter="Completed" class="order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Completed <span id="tabCountCompleted" class="text-[10px] text-slate-500 font-mono">(0)</span></button>
-          <button type="button" data-filter="Partial" class="order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Partial <span id="tabCountPartial" class="text-[10px] text-slate-500 font-mono">(0)</span></button>
-          <button type="button" data-filter="Processing" class="order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Processing <span id="tabCountProcessing" class="text-[10px] text-slate-500 font-mono">(0)</span></button>
-          <button type="button" data-filter="Canceled" class="order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition">Canceled <span id="tabCountCanceled" class="text-[10px] text-slate-500 font-mono">(0)</span></button>
+        <div class="flex items-center gap-1.5 overflow-x-auto pb-1 lg:pb-0 text-xs font-semibold text-slate-400" id="orderStatusTabs">
+          <button type="button" data-filter="all" class="order-tab-btn px-2.5 py-1 rounded-lg bg-red-600 text-white shadow-xs transition">All <span id="tabCountAll" class="text-[10px] opacity-80">(0)</span></button>
+          <button type="button" data-filter="Pending" class="order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">Pending <span id="tabCountPending" class="text-[10px] text-slate-400 font-mono">(0)</span></button>
+          <button type="button" data-filter="In progress" class="order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">In progress <span id="tabCountInProgress" class="text-[10px] text-slate-400 font-mono">(0)</span></button>
+          <button type="button" data-filter="Completed" class="order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">Completed <span id="tabCountCompleted" class="text-[10px] text-slate-400 font-mono">(0)</span></button>
+          <button type="button" data-filter="Partial" class="order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">Partial <span id="tabCountPartial" class="text-[10px] text-slate-400 font-mono">(0)</span></button>
+          <button type="button" data-filter="Processing" class="order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">Processing <span id="tabCountProcessing" class="text-[10px] text-slate-400 font-mono">(0)</span></button>
+          <button type="button" data-filter="Canceled" class="order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition">Canceled <span id="tabCountCanceled" class="text-[10px] text-slate-400 font-mono">(0)</span></button>
         </div>
 
         <div class="relative w-full lg:w-72">
-          <input type="text" id="orderSearchInput" placeholder="Search orders by ID, link, service..." class="w-full bg-slate-50 border border-slate-200 rounded-xl pl-8 pr-3.5 py-1.5 text-xs text-slate-800 placeholder-slate-400 font-sans focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition">
+          <input type="text" id="orderSearchInput" placeholder="Search orders by ID, link, service..." class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl pl-8 pr-3.5 py-1.5 text-xs text-slate-100 placeholder-slate-400 font-sans focus:outline-none focus:ring-1 focus:ring-red-500/30 focus:border-red-500 transition">
           <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 absolute left-2.5 top-2"></i>
         </div>
       </div>
 
       <!-- Orders Table Container -->
-      <div class="overflow-x-auto border border-slate-200/90 rounded-xl shadow-2xs">
-        <table class="w-full text-left text-xs text-slate-600">
-          <thead class="bg-slate-50 text-[10px] font-bold text-slate-500 uppercase tracking-wider border-b border-slate-200 select-none">
+      <div class="overflow-x-auto border border-[#242a37] rounded-xl shadow-2xs">
+        <table class="w-full text-left text-xs text-slate-400">
+          <thead class="bg-[#0e1015] text-[10px] font-bold text-slate-400 uppercase tracking-wider border-b border-[#242a37] select-none">
             <tr>
               <th scope="col" class="py-2.5 px-3 font-mono">ID</th>
               <th scope="col" class="py-2.5 px-3">Date</th>
@@ -829,59 +861,59 @@ Top quality content! Keep it going 🔥👏</textarea>
               <th scope="col" class="py-2.5 px-3 text-center">Action</th>
             </tr>
           </thead>
-          <tbody id="ordersTableBody" class="divide-y divide-slate-100 font-sans bg-white">
+          <tbody id="ordersTableBody" class="divide-y divide-[#202532] font-sans bg-[#151921]">
           </tbody>
         </table>
       </div>
 
       <div id="noOrdersMessage" class="hidden text-center py-8 space-y-1.5">
-        <div class="w-9 h-9 mx-auto rounded-full bg-slate-100 flex items-center justify-center text-slate-400">
+        <div class="w-9 h-9 mx-auto rounded-full bg-[#1a1f29] flex items-center justify-center text-slate-400">
           <i data-lucide="inbox" class="w-4 h-4"></i>
         </div>
-        <p class="text-xs font-semibold text-slate-700">No matching orders found</p>
+        <p class="text-xs font-semibold text-slate-300">No matching orders found</p>
         <p class="text-[11px] text-slate-400">Adjust filters, place a new order, or import past orders from FineSMM.</p>
       </div>
 
-      <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1.5 border-t border-slate-100">
+      <div class="flex items-center justify-between text-[11px] text-slate-400 pt-1.5 border-t border-[#202532]">
         <span id="ordersFooterText">Showing 0 orders</span>
-        <button id="clearOrdersHistoryBtn" class="hover:text-rose-600 transition text-[11px]">Clear Local History</button>
+        <button id="clearOrdersHistoryBtn" class="hover:text-red-400 transition text-[11px]">Clear Local History</button>
       </div>
     </div>
 
   </main>
 
   <!-- IMPORT / ADD ORDER IDS MODAL -->
-  <div id="importOrdersModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 space-y-3.5">
-      <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+  <div id="importOrdersModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[#151921] rounded-2xl max-w-md w-full p-5 shadow-2xl border border-[#242a37] space-y-3.5">
+      <div class="flex items-center justify-between border-b border-[#202532] pb-2.5">
         <div class="flex items-center gap-2">
-          <i data-lucide="download-cloud" class="w-4 h-4 text-blue-600"></i>
-          <h3 class="text-sm font-bold text-slate-800">Fetch Past FineSMM Orders</h3>
+          <i data-lucide="download-cloud" class="w-4 h-4 text-red-400"></i>
+          <h3 class="text-sm font-bold text-slate-100">Fetch Past FineSMM Orders</h3>
         </div>
-        <button id="closeImportModalBtn" class="text-slate-400 hover:text-slate-600">
+        <button id="closeImportModalBtn" class="text-slate-400 hover:text-slate-400">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
 
       <div class="space-y-2.5">
-        <p class="text-xs text-slate-600">
+        <p class="text-xs text-slate-400">
           Enter Order IDs (comma, space, or line separated). The panel queries FineSMM API v2 to fetch live status, charge, and remains.
         </p>
 
         <div>
-          <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Order IDs</label>
-          <textarea id="importOrderIdsInput" rows="3" placeholder="941067, 934899, 934898, 934897, 934629..." class="w-full bg-slate-50 border border-slate-200 rounded-xl p-2.5 text-xs font-mono text-slate-800 focus:outline-none focus:border-blue-500"></textarea>
+          <label class="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1">Order IDs</label>
+          <textarea id="importOrderIdsInput" rows="3" placeholder="941067, 934899, 934898, 934897, 934629..." class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl p-2.5 text-xs font-mono text-slate-100 focus:outline-none focus:border-red-500"></textarea>
         </div>
 
-        <div class="flex items-center justify-between bg-blue-50/70 border border-blue-200/80 rounded-xl p-2 text-xs text-blue-800">
+        <div class="flex items-center justify-between bg-red-500/10 border border-red-500/30 rounded-xl p-2 text-xs text-slate-200">
           <span>Quick Load: 11 recent orders</span>
-          <button type="button" id="quickPreloadOrdersBtn" class="text-[11px] font-bold text-blue-600 hover:underline">Pre-fill</button>
+          <button type="button" id="quickPreloadOrdersBtn" class="text-[11px] font-bold text-red-400 hover:underline">Pre-fill</button>
         </div>
       </div>
 
-      <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-100">
-        <button type="button" id="cancelImportModalBtn" class="px-3.5 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-xl transition">Cancel</button>
-        <button type="button" id="submitImportOrdersBtn" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5">
+      <div class="pt-2 flex items-center justify-end gap-2 border-t border-[#202532]">
+        <button type="button" id="cancelImportModalBtn" class="px-3.5 py-1.5 text-xs font-medium text-slate-400 hover:bg-[#1a1f29] rounded-xl transition">Cancel</button>
+        <button type="button" id="submitImportOrdersBtn" class="px-4 py-1.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-600/30 text-xs font-bold rounded-xl shadow-xs transition flex items-center gap-1.5">
           <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
           <span>Fetch Orders</span>
         </button>
@@ -890,34 +922,65 @@ Top quality content! Keep it going 🔥👏</textarea>
   </div>
 
   <!-- CONFIG MODAL -->
-  <div id="configModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
-    <div class="bg-white rounded-2xl max-w-md w-full p-5 shadow-2xl border border-slate-200 space-y-4">
-      <div class="flex items-center justify-between border-b border-slate-100 pb-2.5">
+  <div id="configModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="bg-[#151921] rounded-2xl max-w-md w-full p-5 shadow-2xl border border-[#242a37] space-y-4">
+      <div class="flex items-center justify-between border-b border-[#202532] pb-2.5">
         <div class="flex items-center gap-2">
-          <i data-lucide="sliders" class="w-4 h-4 text-blue-600"></i>
-          <h3 class="text-sm font-bold text-slate-800">API Connection Settings</h3>
+          <i data-lucide="sliders" class="w-4 h-4 text-red-400"></i>
+          <h3 class="text-sm font-bold text-slate-100">API Connection Settings</h3>
         </div>
-        <button id="closeConfigModalBtn" class="text-slate-400 hover:text-slate-600">
+        <button id="closeConfigModalBtn" class="text-slate-400 hover:text-white">
           <i data-lucide="x" class="w-4 h-4"></i>
         </button>
       </div>
 
-      <div class="space-y-3">
-        <div>
-          <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">FineSMMPanel API Key</label>
-          <input type="password" id="modalApiKey" placeholder="Paste your API key here..." class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-mono text-slate-800 focus:outline-none focus:border-blue-500">
+      <!-- Quick Guidance Callout -->
+      <div class="bg-red-950/20 border border-red-500/20 rounded-xl p-3 text-[11px] text-slate-300 space-y-1">
+        <div class="font-bold text-red-400 flex items-center gap-1.5">
+          <i data-lucide="info" class="w-3.5 h-3.5 shrink-0"></i>
+          <span>Where to get your FineSMM API Key:</span>
         </div>
-
-        <div>
-          <label class="block text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Proxy / API Endpoint</label>
-          <input type="text" id="modalApiEndpoint" placeholder="/api/smm" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-3 py-2 text-xs font-mono text-slate-800 focus:outline-none focus:border-blue-500">
-          <span class="text-[10px] text-slate-400 mt-1 block">Netlify / Hosted: <code class="text-blue-600 font-bold">/api/smm</code> • Local: <code class="text-blue-600 font-bold">http://localhost:5000</code></span>
-        </div>
+        <p class="text-slate-400">1. Log in to <a href="https://finesmmpanel.com" target="_blank" class="text-red-400 underline font-semibold hover:text-red-300">finesmmpanel.com</a></p>
+        <p class="text-slate-400">2. Go to <strong>Account</strong> or <strong>API</strong> tab in the navigation menu</p>
+        <p class="text-slate-400">3. Copy your 32-character <strong>API Key</strong> and paste it below</p>
       </div>
 
-      <div class="pt-2 flex items-center justify-end gap-2 border-t border-slate-100">
-        <button id="cancelModalBtn" class="px-3.5 py-1.5 text-xs font-medium text-slate-600 hover:bg-slate-100 rounded-xl transition">Cancel</button>
-        <button id="saveConfigBtn" class="px-4 py-1.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl shadow-xs transition">Save & Connect</button>
+      <div class="space-y-3">
+        <div>
+          <div class="flex items-center justify-between mb-1">
+            <label class="block text-[11px] font-bold text-slate-300 uppercase tracking-wider">FineSMMPanel API Key</label>
+            <button type="button" id="toggleApiKeyVisibilityBtn" class="text-[10px] text-red-400 hover:text-red-300 font-mono">Show Key</button>
+          </div>
+          <div class="relative">
+            <input type="password" id="modalApiKey" placeholder="Paste your FineSMM API key here..." class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-2 pr-10 text-xs font-mono text-slate-100 focus:outline-none focus:border-red-500">
+            <button type="button" id="toggleApiKeyEyeBtn" class="absolute right-2.5 top-2 text-slate-400 hover:text-white">
+              <i id="apiKeyEyeIcon" data-lucide="eye" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-[11px] font-bold text-slate-300 uppercase tracking-wider mb-1">Proxy / API Endpoint</label>
+          <div class="flex gap-1.5 mb-1.5">
+            <button type="button" id="setLocalEndpointBtn" class="px-2 py-1 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-300 text-[10px] rounded-lg transition font-mono border border-[#242a37]">💻 Local: http://localhost:5000</button>
+            <button type="button" id="setNetlifyEndpointBtn" class="px-2 py-1 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-300 text-[10px] rounded-lg transition font-mono border border-[#242a37]">🌐 Hosted: /api/smm</button>
+          </div>
+          <input type="text" id="modalApiEndpoint" placeholder="http://localhost:5000 or /api/smm" class="w-full bg-[#0e1015] border border-[#242a37] rounded-xl px-3 py-2 text-xs font-mono text-slate-100 focus:outline-none focus:border-red-500">
+        </div>
+
+        <!-- Live Connection Test Result -->
+        <div id="modalTestResult" class="hidden p-2.5 rounded-xl text-xs font-mono leading-relaxed"></div>
+      </div>
+
+      <div class="pt-2 flex items-center justify-between border-t border-[#202532]">
+        <button type="button" id="testConnectionBtn" class="px-3 py-1.5 text-xs font-semibold text-slate-200 bg-[#1e2430] hover:bg-[#272f3f] border border-[#2b3344] rounded-xl transition flex items-center gap-1.5 shadow-2xs">
+          <i data-lucide="activity" class="w-3.5 h-3.5 text-red-400"></i>
+          <span>Test Connection</span>
+        </button>
+        <div class="flex items-center gap-2">
+          <button type="button" id="cancelModalBtn" class="px-3.5 py-1.5 text-xs font-medium text-slate-400 hover:bg-[#1a1f29] rounded-xl transition">Cancel</button>
+          <button type="button" id="saveConfigBtn" class="px-4 py-1.5 bg-gradient-to-r from-red-600 via-rose-600 to-red-700 hover:from-red-500 hover:to-rose-500 text-white shadow-lg shadow-red-600/30 text-xs font-bold rounded-xl transition">Save & Connect</button>
+        </div>
       </div>
     </div>
   </div>
@@ -1195,28 +1258,54 @@ Top quality content! Keep it going 🔥👏</textarea>
       terminalBody.scrollTop = terminalBody.scrollHeight;
     }
 
-    function showAlert(msg, isError = true) {
+    const alertActionBtn = document.getElementById('alertActionBtn');
+    if (alertActionBtn) {
+      alertActionBtn.addEventListener('click', () => {
+        globalAlert.classList.add('hidden');
+        openConfigModal();
+      });
+    }
+
+    function showAlert(msg, isError = true, showAction = false) {
       alertMessage.textContent = msg;
       if (isError) {
-        alertCard.className = 'p-3 rounded-xl border flex items-center justify-between text-xs font-medium bg-rose-50 border-rose-200 text-rose-800';
+        alertCard.className = 'p-3 rounded-xl border flex items-center justify-between text-xs font-medium bg-[#151921] border-red-500/40 text-slate-200 shadow-xl';
+        alertIcon.className = 'w-4 h-4 text-red-400 shrink-0';
       } else {
-        alertCard.className = 'p-3 rounded-xl border flex items-center justify-between text-xs font-medium bg-emerald-50 border-emerald-200 text-emerald-800';
+        alertCard.className = 'p-3 rounded-xl border flex items-center justify-between text-xs font-medium bg-[#131d18] border-emerald-500/40 text-emerald-300 shadow-xl';
+        alertIcon.className = 'w-4 h-4 text-emerald-400 shrink-0';
       }
+
+      if (alertActionBtn) {
+        if (showAction) alertActionBtn.classList.remove('hidden');
+        else alertActionBtn.classList.add('hidden');
+      }
+
       globalAlert.classList.remove('hidden');
     }
 
     closeAlertBtn.addEventListener('click', () => globalAlert.classList.add('hidden'));
     clearLogsBtn.addEventListener('click', () => { terminalBody.innerHTML = ''; });
 
+    function sanitizeApiKey(key) {
+      if (!key) return '';
+      let k = String(key).trim();
+      if ((k.startsWith('"') && k.endsWith('"')) || (k.startsWith("'") && k.endsWith("'"))) {
+        k = k.slice(1, -1).trim();
+      }
+      return k;
+    }
+
     // API Dispatcher
     async function callSmmApi(payload) {
-      if (!state.apiKey) {
-        showAlert('Please configure your FineSMM API key first.');
+      const cleanKey = sanitizeApiKey(state.apiKey);
+      if (!cleanKey) {
+        showAlert('Please configure your FineSMM API key first.', true, true);
         openConfigModal();
         throw new Error('API Key missing');
       }
 
-      payload.key = state.apiKey;
+      payload.key = cleanKey;
       log(`[REQ] ${state.endpoint} (action: ${payload.action})`, 'req');
 
       try {
@@ -1226,15 +1315,42 @@ Top quality content! Keep it going 🔥👏</textarea>
           body: JSON.stringify(payload)
         });
 
-        if (!res.ok) {
-          throw new Error(`HTTP Error ${res.status}: ${res.statusText}`);
+        let data = null;
+        const text = await res.text();
+        try {
+          data = JSON.parse(text);
+        } catch (_) {
+          data = null;
         }
 
-        const data = await res.json();
+        if (!res.ok) {
+          let errorDetail = '';
+          if (data && data.error) {
+            errorDetail = data.error;
+          } else {
+            errorDetail = `HTTP ${res.status}: ${res.statusText || 'Error'}`;
+          }
+
+          if (res.status === 401 || (data && data.error && String(data.error).toLowerCase().includes('key'))) {
+            showAlert(`FineSMM Error: ${errorDetail}. Please update your API Key.`, true, true);
+          } else {
+            showAlert(`API Request failed: ${errorDetail}`, true, false);
+          }
+
+          throw new Error(errorDetail);
+        }
+
+        if (data && data.error) {
+          showAlert(`FineSMM Error: ${data.error}`, true, true);
+          throw new Error(data.error);
+        }
+
         return data;
       } catch (err) {
         log(`[ERROR] ${err.message}`, 'error');
-        showAlert(`API Request failed: ${err.message}`);
+        if (err.message.includes('Failed to fetch') || err.message.includes('NetworkError')) {
+          showAlert(`Cannot connect to API Proxy (${state.endpoint}). Is proxy running?`, true, true);
+        }
         throw err;
       }
     }
@@ -6214,8 +6330,8 @@ Top quality content! Keep it going 🔥👏</textarea>
         if (p === platform) {
           if (p === 'youtube') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-red-600 text-white shadow-xs transition';
           else if (p === 'instagram') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-gradient-to-r from-pink-600 to-rose-600 text-white shadow-xs transition';
-          else if (p === 'telegram') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-sky-500 text-white shadow-xs transition';
-          else if (p === 'facebook') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-blue-600 text-white shadow-xs transition';
+          else if (p === 'telegram') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-red-600 text-white shadow-xs transition';
+          else if (p === 'facebook') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-red-600 text-white shadow-xs transition';
           else if (p === 'twitter') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-900 text-white shadow-xs transition';
           else if (p === 'tiktok') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-900 text-white shadow-xs transition';
           else if (p === 'linkedin') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-blue-700 text-white shadow-xs transition';
@@ -6223,7 +6339,7 @@ Top quality content! Keep it going 🔥👏</textarea>
           else if (p === 'whatsapp') btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-emerald-600 text-white shadow-xs transition';
           else btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-700 text-white shadow-xs transition';
         } else {
-          btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
+          btn.className = 'platform-tab-btn flex items-center justify-center gap-1.5 py-2 px-2 rounded-xl bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition';
         }
       });
 
@@ -6313,7 +6429,7 @@ Top quality content! Keep it going 🔥👏</textarea>
         targetLinkTitle.textContent = 'Telegram Target URL';
         targetHelperBadge.textContent = 'Channel, Group, or Post Link';
         targetLinkInput.placeholder = 'https://t.me/channel_name or https://t.me/channel/123';
-        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-sky-50 text-sky-500 flex items-center justify-center font-bold text-xs';
+        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-red-500/15 text-sky-500 flex items-center justify-center font-bold text-xs';
         targetPlatformIcon.setAttribute('data-lucide', 'send');
         targetInputIcon.setAttribute('data-lucide', 'send');
         masterPlatformSubtitle.textContent = 'Telegram Growth & Engagement Orchestrator';
@@ -6326,7 +6442,7 @@ Top quality content! Keep it going 🔥👏</textarea>
         targetLinkTitle.textContent = 'Facebook Target URL';
         targetHelperBadge.textContent = 'Post, Video, Reel, or Page Link';
         targetLinkInput.placeholder = 'https://www.facebook.com/...';
-        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs';
+        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-red-500/15 text-red-400 flex items-center justify-center font-bold text-xs';
         targetPlatformIcon.setAttribute('data-lucide', 'facebook');
         targetInputIcon.setAttribute('data-lucide', 'facebook');
         masterPlatformSubtitle.textContent = 'Facebook Traffic & Growth Orchestrator';
@@ -6339,7 +6455,7 @@ Top quality content! Keep it going 🔥👏</textarea>
         targetLinkTitle.textContent = 'Twitter / X Target URL';
         targetHelperBadge.textContent = 'Tweet, Video, or Space Link';
         targetLinkInput.placeholder = 'https://x.com/username/status/...';
-        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs';
+        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-[#1a1f29] text-white flex items-center justify-center font-bold text-xs';
         targetPlatformIcon.setAttribute('data-lucide', 'twitter');
         targetInputIcon.setAttribute('data-lucide', 'twitter');
         masterPlatformSubtitle.textContent = 'X / Twitter Engagement Orchestrator';
@@ -6352,7 +6468,7 @@ Top quality content! Keep it going 🔥👏</textarea>
         targetLinkTitle.textContent = 'TikTok Target URL';
         targetHelperBadge.textContent = 'Video, Sound, or Profile Link';
         targetLinkInput.placeholder = 'https://www.tiktok.com/@user/video/...';
-        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-slate-100 text-slate-900 flex items-center justify-center font-bold text-xs';
+        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-[#1a1f29] text-white flex items-center justify-center font-bold text-xs';
         targetPlatformIcon.setAttribute('data-lucide', 'music-2');
         targetInputIcon.setAttribute('data-lucide', 'music-2');
         masterPlatformSubtitle.textContent = 'TikTok Viral Pacing Orchestrator';
@@ -6365,7 +6481,7 @@ Top quality content! Keep it going 🔥👏</textarea>
         targetLinkTitle.textContent = 'LinkedIn Target URL';
         targetHelperBadge.textContent = 'Post, Article, or Company Page Link';
         targetLinkInput.placeholder = 'https://www.linkedin.com/in/... or https://linkedin.com/posts/...';
-        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center font-bold text-xs';
+        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-red-500/15 text-red-400 flex items-center justify-center font-bold text-xs';
         targetPlatformIcon.setAttribute('data-lucide', 'linkedin');
         targetInputIcon.setAttribute('data-lucide', 'linkedin');
         masterPlatformSubtitle.textContent = 'LinkedIn B2B Authority Orchestrator';
@@ -6404,7 +6520,7 @@ Top quality content! Keep it going 🔥👏</textarea>
         targetLinkTitle.textContent = 'Universal Target URL';
         targetHelperBadge.textContent = 'Any Social Media Link';
         targetLinkInput.placeholder = 'https://...';
-        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center font-bold text-xs';
+        targetPlatformIconBox.className = 'w-6 h-6 rounded-lg bg-red-500/15 text-red-400 flex items-center justify-center font-bold text-xs';
         targetPlatformIcon.setAttribute('data-lucide', 'globe');
         targetInputIcon.setAttribute('data-lucide', 'globe');
         masterPlatformSubtitle.textContent = 'All Services Orchestrator (491 Services)';
@@ -6422,6 +6538,7 @@ Top quality content! Keep it going 🔥👏</textarea>
       populateDropdown(followersServiceSelect, getFilteredServices('followers'));
 
       lucide.createIcons();
+      syncPresetButtonsUI();
       recalculateAll();
     }
 
@@ -6467,7 +6584,21 @@ Top quality content! Keep it going 🔥👏</textarea>
         });
       }
 
-      selectEl.value = list[0].service;
+      // Preserve saved service ID if present in the current filtered list
+      let chosenValue = list[0].service;
+      let targetModuleKey = '';
+      if (typeof viewsServiceSelect !== 'undefined' && selectEl === viewsServiceSelect) targetModuleKey = 'views';
+      else if (typeof likesServiceSelect !== 'undefined' && selectEl === likesServiceSelect) targetModuleKey = 'likes';
+      else if (typeof commentsServiceSelect !== 'undefined' && selectEl === commentsServiceSelect) targetModuleKey = 'comments';
+      else if (typeof followersServiceSelect !== 'undefined' && selectEl === followersServiceSelect) targetModuleKey = 'followers';
+
+      if (targetModuleKey && state.modules[targetModuleKey] && state.modules[targetModuleKey].serviceId) {
+        const savedId = state.modules[targetModuleKey].serviceId;
+        const exists = list.some(s => String(s.service) === String(savedId));
+        if (exists) chosenValue = savedId;
+      }
+
+      selectEl.value = chosenValue;
     }
 
     // Anti-Bot Partitioning Algorithm
@@ -6652,12 +6783,181 @@ Top quality content! Keep it going 🔥👏</textarea>
     }
 
     // Recalculate Modules & Master Total
+    
+    // Panel Data Persistence (Auto-saves all inputs to LocalStorage)
+    function savePanelConfig() {
+      try {
+        const config = {
+          targetUrl: targetLinkInput ? targetLinkInput.value : '',
+          currentPlatform: state.currentPlatform || 'youtube',
+          commentsText: commentsTextInput ? commentsTextInput.value : '',
+          modules: {
+            views: {
+              enabled: state.modules.views.enabled,
+              target: state.modules.views.target,
+              runs: state.modules.views.runs,
+              spreadMode: state.modules.views.spreadMode,
+              customHours: state.modules.views.customHours,
+              variancePct: state.modules.views.variancePct,
+              serviceId: state.modules.views.serviceId
+            },
+            likes: {
+              enabled: state.modules.likes.enabled,
+              target: state.modules.likes.target,
+              runs: state.modules.likes.runs,
+              spreadMode: state.modules.likes.spreadMode,
+              customHours: state.modules.likes.customHours,
+              variancePct: state.modules.likes.variancePct,
+              serviceId: state.modules.likes.serviceId
+            },
+            comments: {
+              enabled: state.modules.comments.enabled,
+              target: state.modules.comments.target,
+              runs: state.modules.comments.runs,
+              spreadMode: state.modules.comments.spreadMode,
+              customHours: state.modules.comments.customHours,
+              variancePct: state.modules.comments.variancePct,
+              serviceId: state.modules.comments.serviceId
+            },
+            followers: {
+              enabled: state.modules.followers.enabled,
+              target: state.modules.followers.target,
+              runs: state.modules.followers.runs,
+              spreadMode: state.modules.followers.spreadMode,
+              customHours: state.modules.followers.customHours,
+              variancePct: state.modules.followers.variancePct,
+              serviceId: state.modules.followers.serviceId
+            }
+          }
+        };
+        localStorage.setItem('chetan_panel_config', JSON.stringify(config));
+      } catch (err) {
+        console.warn('Failed to save panel config to localStorage:', err);
+      }
+    }
+
+    function loadPanelConfig() {
+      try {
+        const raw = localStorage.getItem('chetan_panel_config');
+        if (!raw) return false;
+        const config = JSON.parse(raw);
+        if (!config) return false;
+
+        if (config.targetUrl !== undefined && targetLinkInput) {
+          targetLinkInput.value = config.targetUrl;
+        }
+
+        if (config.currentPlatform) {
+          state.currentPlatform = config.currentPlatform;
+        }
+
+        if (config.commentsText !== undefined && commentsTextInput) {
+          commentsTextInput.value = config.commentsText;
+          const count = config.commentsText.split('\n').filter(l => l.trim().length > 0).length;
+          if (commentsCountLabel) commentsCountLabel.textContent = `${count} loaded`;
+        }
+
+        if (config.modules) {
+          ['views', 'likes', 'comments', 'followers'].forEach(k => {
+            const saved = config.modules[k];
+            const mod = state.modules[k];
+            if (saved && mod) {
+              if (saved.enabled !== undefined) mod.enabled = saved.enabled;
+              if (saved.target !== undefined) mod.target = saved.target;
+              if (saved.runs !== undefined) mod.runs = saved.runs;
+              if (saved.spreadMode !== undefined) mod.spreadMode = saved.spreadMode;
+              if (saved.customHours !== undefined) mod.customHours = saved.customHours;
+              if (saved.variancePct !== undefined) mod.variancePct = saved.variancePct;
+              if (saved.serviceId !== undefined) mod.serviceId = saved.serviceId;
+            }
+          });
+        }
+
+        // Apply to UI Controls
+        if (viewsToggle) viewsToggle.checked = state.modules.views.enabled;
+        if (viewsTargetInput) viewsTargetInput.value = state.modules.views.target;
+        if (viewsRunsInput) viewsRunsInput.value = state.modules.views.runs;
+        if (viewsCustomHoursInput) viewsCustomHoursInput.value = state.modules.views.customHours;
+        if (viewsVarianceSlider) viewsVarianceSlider.value = state.modules.views.variancePct;
+        if (viewsVarianceBadge) viewsVarianceBadge.textContent = `±${state.modules.views.variancePct}%`;
+
+        if (likesToggle) likesToggle.checked = state.modules.likes.enabled;
+        if (likesTargetInput) likesTargetInput.value = state.modules.likes.target;
+        if (likesRunsInput) likesRunsInput.value = state.modules.likes.runs;
+        if (likesCustomHoursInput) likesCustomHoursInput.value = state.modules.likes.customHours;
+
+        if (commentsToggle) commentsToggle.checked = state.modules.comments.enabled;
+        if (commentsTargetInput) commentsTargetInput.value = state.modules.comments.target;
+        if (commentsRunsInput) commentsRunsInput.value = state.modules.comments.runs;
+        if (commentsCustomHoursInput) commentsCustomHoursInput.value = state.modules.comments.customHours;
+
+        if (followersToggle) followersToggle.checked = state.modules.followers.enabled;
+        if (followersTargetInput) followersTargetInput.value = state.modules.followers.target;
+        if (followersRunsInput) followersRunsInput.value = state.modules.followers.runs;
+        if (followersCustomHoursInput) followersCustomHoursInput.value = state.modules.followers.customHours;
+
+        return true;
+      } catch (err) {
+        console.warn('Failed to load panel config from localStorage:', err);
+        return false;
+      }
+    }
+
+    function syncPresetButtonsUI() {
+      const items = [
+        { key: 'views', selector: '.views-preset-btn', box: viewsCustomHoursBox, input: viewsCustomHoursInput, days: viewsCustomDaysText },
+        { key: 'likes', selector: '.likes-preset-btn', box: likesCustomHoursBox, input: likesCustomHoursInput, days: likesCustomDaysText },
+        { key: 'comments', selector: '.comments-preset-btn', box: commentsCustomHoursBox, input: commentsCustomHoursInput, days: commentsCustomDaysText },
+        { key: 'followers', selector: '.followers-preset-btn', box: followersCustomHoursBox, input: followersCustomHoursInput, days: followersCustomDaysText }
+      ];
+
+      items.forEach(item => {
+        const mode = state.modules[item.key].spreadMode || 'auto';
+        document.querySelectorAll(item.selector).forEach(btn => {
+          if (btn.dataset.hours === mode) {
+            btn.className = `${item.selector.slice(1)} py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold`;
+          } else {
+            btn.className = `${item.selector.slice(1)} py-1 rounded-lg transition text-slate-400 hover:text-white`;
+          }
+        });
+
+        if (item.box) {
+          if (mode === 'custom') {
+            item.box.classList.remove('hidden');
+            if (item.input) item.input.value = state.modules[item.key].customHours || 48;
+            if (item.days) item.days.textContent = `${((state.modules[item.key].customHours || 48) / 24).toFixed(1)}d`;
+          } else {
+            item.box.classList.add('hidden');
+          }
+        }
+      });
+
+      // Also sync quick quantity buttons
+      const quickItems = [
+        { key: 'views', selector: '.views-quick-btn' },
+        { key: 'likes', selector: '.likes-quick-btn' },
+        { key: 'comments', selector: '.comments-quick-btn' },
+        { key: 'followers', selector: '.followers-quick-btn' }
+      ];
+      quickItems.forEach(item => {
+        const targetVal = String(state.modules[item.key].target);
+        document.querySelectorAll(item.selector).forEach(btn => {
+          if (btn.dataset.qty === targetVal) {
+            btn.className = `${item.selector.slice(1)} px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs`;
+          } else {
+            btn.className = `${item.selector.slice(1)} px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition`;
+          }
+        });
+      });
+    }
+
     function recalculateAll() {
       recalculateViews();
       recalculateLikes();
       recalculateComments();
       recalculateFollowers();
       updateMasterSummary();
+      savePanelConfig();
     }
 
     function recalculateViews() {
@@ -6709,14 +7009,14 @@ Top quality content! Keep it going 🔥👏</textarea>
       viewsRunsTableBody.innerHTML = '';
       m.plan.plan.forEach(item => {
         const row = document.createElement('div');
-        row.className = 'flex items-center justify-between text-xs py-1 px-2.5 rounded-lg bg-white border border-slate-100 font-mono hover:border-slate-300 transition-colors';
+        row.className = 'flex items-center justify-between text-xs py-1 px-2.5 rounded-lg bg-[#151921] border border-[#202532] font-mono hover:border-[#32394a] transition-colors';
         row.innerHTML = `
           <div class="flex items-center gap-2">
-            <span class="w-4 h-4 rounded-full bg-blue-600 text-white flex items-center justify-center text-[9px] font-bold">${item.runIndex}</span>
-            <span class="text-slate-600 font-medium text-[11px]">${item.dateStr}</span>
+            <span class="w-4 h-4 rounded-full bg-red-600 text-white flex items-center justify-center text-[9px] font-bold">${item.runIndex}</span>
+            <span class="text-slate-400 font-medium text-[11px]">${item.dateStr}</span>
           </div>
           <div class="text-right">
-            <span class="text-slate-900 font-bold text-[11px]">+${item.qty.toLocaleString()}</span>
+            <span class="text-white font-bold text-[11px]">+${item.qty.toLocaleString()}</span>
             <span class="text-slate-400 text-[10px] ml-1">=${item.cumulativeQty.toLocaleString()}</span>
           </div>
         `;
@@ -6922,6 +7222,7 @@ Top quality content! Keep it going 🔥👏</textarea>
     }
 
     // Module Events
+    targetLinkInput.addEventListener('input', savePanelConfig);
     viewsToggle.addEventListener('change', recalculateAll);
     viewsTargetInput.addEventListener('input', recalculateAll);
     viewsRunsInput.addEventListener('input', recalculateAll);
@@ -6930,9 +7231,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.views-quick-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.views-quick-btn').forEach(b => {
-          b.className = 'views-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-600 text-[10px] font-mono rounded-lg transition';
+          b.className = 'views-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition';
         });
-        btn.className = 'views-quick-btn px-2 py-0.5 bg-blue-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
+        btn.className = 'views-quick-btn px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
         viewsTargetInput.value = btn.dataset.qty;
         recalculateAll();
       });
@@ -6959,9 +7260,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.views-preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.views-preset-btn').forEach(b => {
-          b.className = 'views-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+          b.className = 'views-preset-btn py-1 rounded-lg transition hover:text-white';
         });
-        btn.className = 'views-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-blue-600 font-bold';
+        btn.className = 'views-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold';
         state.modules.views.spreadMode = btn.dataset.hours;
         if (btn.dataset.hours === 'custom') {
           viewsCustomHoursBox.classList.remove('hidden');
@@ -6987,9 +7288,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.likes-preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.likes-preset-btn').forEach(b => {
-          b.className = 'likes-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+          b.className = 'likes-preset-btn py-1 rounded-lg transition hover:text-white';
         });
-        btn.className = 'likes-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-rose-600 font-bold';
+        btn.className = 'likes-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold';
         state.modules.likes.spreadMode = btn.dataset.hours;
         if (btn.dataset.hours === 'custom') {
           likesCustomHoursBox.classList.remove('hidden');
@@ -7015,9 +7316,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.comments-preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.comments-preset-btn').forEach(b => {
-          b.className = 'comments-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+          b.className = 'comments-preset-btn py-1 rounded-lg transition hover:text-white';
         });
-        btn.className = 'comments-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-sky-600 font-bold';
+        btn.className = 'comments-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold';
         state.modules.comments.spreadMode = btn.dataset.hours;
         if (btn.dataset.hours === 'custom') {
           commentsCustomHoursBox.classList.remove('hidden');
@@ -7043,9 +7344,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.followers-preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.followers-preset-btn').forEach(b => {
-          b.className = 'followers-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+          b.className = 'followers-preset-btn py-1 rounded-lg transition hover:text-white';
         });
-        btn.className = 'followers-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-purple-600 font-bold';
+        btn.className = 'followers-preset-btn py-1 rounded-lg transition bg-red-600 text-white shadow-xs shadow-red-600/30 font-bold';
         state.modules.followers.spreadMode = btn.dataset.hours;
         if (btn.dataset.hours === 'custom') {
           followersCustomHoursBox.classList.remove('hidden');
@@ -7096,9 +7397,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.likes-quick-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.likes-quick-btn').forEach(b => {
-          b.className = 'likes-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-rose-50 hover:text-rose-600 text-slate-600 text-[10px] font-mono rounded-lg transition';
+          b.className = 'likes-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition';
         });
-        btn.className = 'likes-quick-btn px-2 py-0.5 bg-rose-500 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
+        btn.className = 'likes-quick-btn px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
         likesTargetInput.value = btn.dataset.qty;
         recalculateAll();
       });
@@ -7129,14 +7430,15 @@ Top quality content! Keep it going 🔥👏</textarea>
     commentsTextInput.addEventListener('input', () => {
       const lines = commentsTextInput.value.split('\n').filter(l => l.trim().length > 0);
       commentsCountLabel.textContent = `${lines.length} lines`;
+      savePanelConfig();
     });
 
     document.querySelectorAll('.comments-quick-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.comments-quick-btn').forEach(b => {
-          b.className = 'comments-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-sky-50 hover:text-sky-600 text-slate-600 text-[10px] font-mono rounded-lg transition';
+          b.className = 'comments-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition';
         });
-        btn.className = 'comments-quick-btn px-2 py-0.5 bg-sky-500 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
+        btn.className = 'comments-quick-btn px-2 py-0.5 bg-red-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
         commentsTargetInput.value = btn.dataset.qty;
         recalculateAll();
       });
@@ -7168,7 +7470,7 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.followers-quick-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.followers-quick-btn').forEach(b => {
-          b.className = 'followers-quick-btn px-2 py-0.5 bg-slate-100 hover:bg-purple-50 hover:text-purple-600 text-slate-600 text-[10px] font-mono rounded-lg transition';
+          b.className = 'followers-quick-btn px-2 py-0.5 bg-[#1a1f29] hover:bg-red-500/15 hover:text-red-400 text-slate-400 text-[10px] font-mono rounded-lg transition';
         });
         btn.className = 'followers-quick-btn px-2 py-0.5 bg-purple-600 text-white font-bold text-[10px] font-mono rounded-lg transition shadow-2xs';
         followersTargetInput.value = btn.dataset.qty;
@@ -7359,7 +7661,7 @@ Top quality content! Keep it going 🔥👏</textarea>
 
       countdownTimer.textContent = '--:--:--';
       runnerStatusBadge.textContent = 'STOPPED';
-      runnerStatusBadge.className = 'px-2 py-0.5 bg-slate-100 text-slate-600 text-[9px] font-bold rounded-md font-mono uppercase tracking-wider';
+      runnerStatusBadge.className = 'px-2 py-0.5 bg-[#1a1f29] text-slate-400 text-[9px] font-bold rounded-md font-mono uppercase tracking-wider';
       startRunnerBtn.disabled = false;
       startRunnerBtn.classList.remove('opacity-50', 'cursor-not-allowed');
       stopRunnerBtn.disabled = true;
@@ -7524,28 +7826,28 @@ Top quality content! Keep it going 🔥👏</textarea>
     function getStatusBadge(status) {
       const s = (status || 'Pending').toLowerCase();
       if (s === 'completed') {
-        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span> Completed
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-950/40 text-emerald-400 border border-emerald-500/30 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> Completed
         </span>`;
       } else if (s === 'processing') {
-        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span> Processing
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-950/40 text-red-400 border border-red-500/30 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> Processing
         </span>`;
       } else if (s === 'in progress' || s === 'inprogress') {
-        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-indigo-50 text-indigo-700 border border-indigo-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse"></span> In progress
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-950/40 text-red-400 border border-red-500/30 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span> In progress
         </span>`;
       } else if (s === 'partial') {
-        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-purple-50 text-purple-700 border border-purple-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-purple-500"></span> Partial
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#1e232e] text-slate-300 border border-slate-700 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> Partial
         </span>`;
       } else if (s === 'canceled' || s === 'cancelled') {
-        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-rose-50 text-rose-700 border border-rose-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-rose-500"></span> Canceled
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#141720] text-slate-500 border border-slate-800 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-600"></span> Canceled
         </span>`;
       } else {
-        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-amber-50 text-amber-700 border border-amber-200">
-          <span class="w-1.5 h-1.5 rounded-full bg-amber-500"></span> ${status || 'Pending'}
+        return `<span class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold bg-[#1e232e] text-slate-300 border border-slate-700/60 font-mono">
+          <span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span> ${status || 'Pending'}
         </span>`;
       }
     }
@@ -7624,11 +7926,11 @@ Top quality content! Keep it going 🔥👏</textarea>
 
       filtered.forEach(o => {
         const tr = document.createElement('tr');
-        tr.className = 'hover:bg-slate-50/80 transition-colors border-b border-slate-100 last:border-none';
+        tr.className = 'hover:bg-[#0e1015]/80 transition-colors border-b border-[#202532] last:border-none';
 
         const linkInfo = formatLinkDisplay(o.link);
         const linkHtml = o.link && o.link !== '--'
-          ? `<a href="${o.link}" target="_blank" rel="noopener noreferrer" title="${o.link}" class="inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 hover:underline font-mono text-[11px] max-w-[190px] truncate">
+          ? `<a href="${o.link}" target="_blank" rel="noopener noreferrer" title="${o.link}" class="inline-flex items-center gap-1 text-red-400 hover:text-slate-200 hover:underline font-mono text-[11px] max-w-[190px] truncate">
               <span>${linkInfo.short}</span>
               <i data-lucide="external-link" class="w-3 h-3 shrink-0"></i>
             </a>`
@@ -7651,40 +7953,40 @@ Top quality content! Keep it going 🔥👏</textarea>
           : '--';
 
         tr.innerHTML = `
-          <td class="py-2.5 px-3 font-mono font-bold text-slate-800 whitespace-nowrap">
-            <button type="button" class="copy-order-id-btn hover:text-blue-600 flex items-center gap-1" title="Click to copy ID" data-id="${o.id}">
+          <td class="py-2.5 px-3 font-mono font-bold text-slate-100 whitespace-nowrap">
+            <button type="button" class="copy-order-id-btn hover:text-red-400 flex items-center gap-1" title="Click to copy ID" data-id="${o.id}">
               <span>#${o.id}</span>
               <i data-lucide="copy" class="w-2.5 h-2.5 text-slate-400"></i>
             </button>
           </td>
-          <td class="py-2.5 px-3 font-mono text-slate-500 whitespace-nowrap text-[10px]">
+          <td class="py-2.5 px-3 font-mono text-slate-400 whitespace-nowrap text-[10px]">
             ${o.date ? o.date.substring(5, 16) : '--'}
           </td>
           <td class="py-2.5 px-3 max-w-[200px]">
             ${linkHtml}
           </td>
-          <td class="py-2.5 px-3 text-right font-mono font-bold text-slate-800 whitespace-nowrap">
+          <td class="py-2.5 px-3 text-right font-mono font-bold text-slate-100 whitespace-nowrap">
             ${chargeFormatted}
           </td>
-          <td class="py-2.5 px-3 text-right font-mono text-slate-600 whitespace-nowrap text-[11px]">
+          <td class="py-2.5 px-3 text-right font-mono text-slate-400 whitespace-nowrap text-[11px]">
             ${startCountFormatted}
           </td>
-          <td class="py-2.5 px-3 text-right font-mono font-bold text-slate-900 whitespace-nowrap">
+          <td class="py-2.5 px-3 text-right font-mono font-bold text-white whitespace-nowrap">
             ${qtyFormatted}
           </td>
           <td class="py-2.5 px-3 max-w-[240px]">
-            <div class="truncate text-slate-700 font-medium text-[11px]" title="${o.service}">
+            <div class="truncate text-slate-300 font-medium text-[11px]" title="${o.service}">
               ${o.service}
             </div>
           </td>
           <td class="py-2.5 px-3 text-center whitespace-nowrap">
             ${getStatusBadge(o.status)}
           </td>
-          <td class="py-2.5 px-3 text-right font-mono text-slate-600 whitespace-nowrap text-[11px]">
+          <td class="py-2.5 px-3 text-right font-mono text-slate-400 whitespace-nowrap text-[11px]">
             ${remainsFormatted}
           </td>
           <td class="py-2.5 px-3 text-center whitespace-nowrap">
-            <button type="button" class="refresh-order-btn p-1 text-slate-400 hover:text-blue-600 hover:bg-blue-50 rounded-lg transition" title="Refresh order status" data-id="${o.id}">
+            <button type="button" class="refresh-order-btn p-1 text-slate-400 hover:text-red-400 hover:bg-red-500/15 rounded-lg transition" title="Refresh order status" data-id="${o.id}">
               <i data-lucide="refresh-cw" class="w-3.5 h-3.5"></i>
             </button>
           </td>
@@ -7891,9 +8193,9 @@ Top quality content! Keep it going 🔥👏</textarea>
     document.querySelectorAll('.order-tab-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.order-tab-btn').forEach(b => {
-          b.className = 'order-tab-btn px-2.5 py-1 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 transition';
+          b.className = 'order-tab-btn px-2.5 py-1 rounded-lg bg-[#1a1f29] hover:bg-[#272e3d] text-slate-300 transition';
         });
-        btn.className = 'order-tab-btn px-2.5 py-1 rounded-lg bg-blue-600 text-white shadow-xs transition';
+        btn.className = 'order-tab-btn px-2.5 py-1 rounded-lg bg-red-600 text-white shadow-xs transition';
         state.orderFilter = btn.getAttribute('data-filter') || 'all';
         renderOrdersTable();
       });
@@ -7926,8 +8228,12 @@ Top quality content! Keep it going 🔥👏</textarea>
     // Auto-init on page load
     window.addEventListener('DOMContentLoaded', () => {
       lucide.createIcons();
-      switchPlatform('youtube'); // Default to YouTube as requested
       loadStoredOrders();
+
+      // Restore saved inputs, selections, custom hours, and active platform
+      loadPanelConfig();
+      switchPlatform(state.currentPlatform || 'youtube');
+      syncPresetButtonsUI();
 
       if (state.apiKey) {
         loadBalance();

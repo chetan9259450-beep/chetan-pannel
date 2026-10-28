@@ -14,6 +14,12 @@ export default async function handler(req, res) {
 
   try {
     const payload = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+    if (payload.key) {
+      payload.key = String(payload.key).trim().replace(/^["']|["']$/g, '');
+    }
+    if (payload.action) {
+      payload.action = String(payload.action).trim();
+    }
     if (payload && Array.isArray(payload.orders)) {
       payload.orders = payload.orders.join(',');
     }
