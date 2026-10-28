@@ -257,6 +257,19 @@
                 <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
                 <button type="button" class="views-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
               </div>
+
+              <!-- Custom Delivery Duration Box -->
+              <div id="viewsCustomHoursBox" class="hidden mt-2 p-2 bg-blue-50/70 border border-blue-200/80 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-blue-900 font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-blue-600"></i>
+                  <span>Custom Total Spread:</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <input type="number" id="viewsCustomHoursInput" value="72" min="1" max="1000" class="w-20 bg-white border border-blue-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-blue-900 text-center focus:outline-none focus:ring-1 focus:ring-blue-500">
+                  <span class="text-[11px] font-bold text-blue-700">Hours</span>
+                  <span class="text-[10px] text-blue-500 font-medium">(~<span id="viewsCustomDaysText">3.0d</span>)</span>
+                </div>
+              </div>
             </div>
 
             <!-- Number of Runs & Random Variance Grid -->
@@ -397,6 +410,19 @@
                 <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
                 <button type="button" class="likes-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
               </div>
+
+              <!-- Custom Delivery Duration Box -->
+              <div id="likesCustomHoursBox" class="hidden mt-2 p-2 bg-rose-50/70 border border-rose-200/80 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-rose-900 font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-rose-600"></i>
+                  <span>Custom Total Spread:</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <input type="number" id="likesCustomHoursInput" value="48" min="1" max="1000" class="w-20 bg-white border border-rose-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-rose-900 text-center focus:outline-none focus:ring-1 focus:ring-rose-500">
+                  <span class="text-[11px] font-bold text-rose-700">Hours</span>
+                  <span class="text-[10px] text-rose-500 font-medium">(~<span id="likesCustomDaysText">2.0d</span>)</span>
+                </div>
+              </div>
             </div>
 
             <div class="flex items-center gap-2">
@@ -500,6 +526,19 @@ Top quality content! Keep it going 🔥👏</textarea>
                 <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
                 <button type="button" class="comments-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
               </div>
+
+              <!-- Custom Delivery Duration Box -->
+              <div id="commentsCustomHoursBox" class="hidden mt-2 p-2 bg-sky-50/70 border border-sky-200/80 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-sky-900 font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-sky-600"></i>
+                  <span>Custom Total Spread:</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <input type="number" id="commentsCustomHoursInput" value="24" min="1" max="1000" class="w-20 bg-white border border-sky-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-sky-900 text-center focus:outline-none focus:ring-1 focus:ring-sky-500">
+                  <span class="text-[11px] font-bold text-sky-700">Hours</span>
+                  <span class="text-[10px] text-sky-500 font-medium">(~<span id="commentsCustomDaysText">1.0d</span>)</span>
+                </div>
+              </div>
             </div>
 
             <div class="flex items-center gap-2">
@@ -587,6 +626,19 @@ Top quality content! Keep it going 🔥👏</textarea>
                 <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="24">24h</button>
                 <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="48">48h</button>
                 <button type="button" class="followers-preset-btn py-1 rounded-lg transition hover:text-slate-900" data-hours="custom">Custom</button>
+              </div>
+
+              <!-- Custom Delivery Duration Box -->
+              <div id="followersCustomHoursBox" class="hidden mt-2 p-2 bg-purple-50/70 border border-purple-200/80 rounded-xl flex items-center justify-between text-xs">
+                <div class="flex items-center gap-1.5 text-purple-900 font-semibold">
+                  <i data-lucide="timer" class="w-3.5 h-3.5 text-purple-600"></i>
+                  <span>Custom Total Spread:</span>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <input type="number" id="followersCustomHoursInput" value="48" min="1" max="1000" class="w-20 bg-white border border-purple-300 rounded-lg px-2 py-1 text-xs font-mono font-bold text-purple-900 text-center focus:outline-none focus:ring-1 focus:ring-purple-500">
+                  <span class="text-[11px] font-bold text-purple-700">Hours</span>
+                  <span class="text-[10px] text-purple-500 font-medium">(~<span id="followersCustomDaysText">2.0d</span>)</span>
+                </div>
               </div>
             </div>
 
@@ -1073,6 +1125,23 @@ Top quality content! Keep it going 🔥👏</textarea>
     const followersSpreadDurationText = document.getElementById('followersSpreadDurationText');
     const followersRunsInput = document.getElementById('followersRunsInput');
     const followersAutoRunsBtn = document.getElementById('followersAutoRunsBtn');
+
+    // Custom Hours DOM Elements
+    const viewsCustomHoursBox = document.getElementById('viewsCustomHoursBox');
+    const viewsCustomHoursInput = document.getElementById('viewsCustomHoursInput');
+    const viewsCustomDaysText = document.getElementById('viewsCustomDaysText');
+
+    const likesCustomHoursBox = document.getElementById('likesCustomHoursBox');
+    const likesCustomHoursInput = document.getElementById('likesCustomHoursInput');
+    const likesCustomDaysText = document.getElementById('likesCustomDaysText');
+
+    const commentsCustomHoursBox = document.getElementById('commentsCustomHoursBox');
+    const commentsCustomHoursInput = document.getElementById('commentsCustomHoursInput');
+    const commentsCustomDaysText = document.getElementById('commentsCustomDaysText');
+
+    const followersCustomHoursBox = document.getElementById('followersCustomHoursBox');
+    const followersCustomHoursInput = document.getElementById('followersCustomHoursInput');
+    const followersCustomDaysText = document.getElementById('followersCustomDaysText');
 
     // Orders DOM Elements
     const ordersTableBody = document.getElementById('ordersTableBody');
@@ -6615,6 +6684,10 @@ Top quality content! Keep it going 🔥👏</textarea>
       m.runs = runs;
       viewsRunsInput.value = runs;
 
+      if (m.spreadMode === 'custom' && viewsCustomHoursInput) {
+        m.customHours = parseFloat(viewsCustomHoursInput.value) || 72;
+        if (viewsCustomDaysText) viewsCustomDaysText.textContent = (m.customHours / 24).toFixed(1) + 'd';
+      }
       m.plan = generateAntiBotPlan(
         m.target,
         runs,
@@ -6676,6 +6749,11 @@ Top quality content! Keep it going 🔥👏</textarea>
       m.runs = runs;
       likesRunsInput.value = runs;
 
+      if (m.spreadMode === 'custom' && likesCustomHoursInput) {
+        m.customHours = parseFloat(likesCustomHoursInput.value) || 48;
+        if (likesCustomDaysText) likesCustomDaysText.textContent = (m.customHours / 24).toFixed(1) + 'd';
+      }
+
       m.plan = generateAntiBotPlan(
         m.target,
         runs,
@@ -6715,6 +6793,11 @@ Top quality content! Keep it going 🔥👏</textarea>
       runs = Math.max(1, Math.min(runs, maxPossible));
       m.runs = runs;
       commentsRunsInput.value = runs;
+
+      if (m.spreadMode === 'custom' && commentsCustomHoursInput) {
+        m.customHours = parseFloat(commentsCustomHoursInput.value) || 24;
+        if (commentsCustomDaysText) commentsCustomDaysText.textContent = (m.customHours / 24).toFixed(1) + 'd';
+      }
 
       m.plan = generateAntiBotPlan(
         m.target,
@@ -6758,6 +6841,11 @@ Top quality content! Keep it going 🔥👏</textarea>
       runs = Math.max(1, Math.min(runs, maxPossible));
       m.runs = runs;
       followersRunsInput.value = runs;
+
+      if (m.spreadMode === 'custom' && followersCustomHoursInput) {
+        m.customHours = parseFloat(followersCustomHoursInput.value) || 48;
+        if (followersCustomDaysText) followersCustomDaysText.textContent = (m.customHours / 24).toFixed(1) + 'd';
+      }
 
       m.plan = generateAntiBotPlan(
         m.target,
@@ -6867,6 +6955,7 @@ Top quality content! Keep it going 🔥👏</textarea>
       }
     });
 
+    // Views Delivery Presets
     document.querySelectorAll('.views-preset-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.views-preset-btn').forEach(b => {
@@ -6874,9 +6963,109 @@ Top quality content! Keep it going 🔥👏</textarea>
         });
         btn.className = 'views-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-blue-600 font-bold';
         state.modules.views.spreadMode = btn.dataset.hours;
+        if (btn.dataset.hours === 'custom') {
+          viewsCustomHoursBox.classList.remove('hidden');
+        } else {
+          viewsCustomHoursBox.classList.add('hidden');
+        }
+        lucide.createIcons();
         recalculateAll();
       });
     });
+
+    if (viewsCustomHoursInput) {
+      viewsCustomHoursInput.addEventListener('input', () => {
+        let h = parseFloat(viewsCustomHoursInput.value) || 24;
+        h = Math.max(1, Math.min(h, 2000));
+        state.modules.views.customHours = h;
+        if (viewsCustomDaysText) viewsCustomDaysText.textContent = (h / 24).toFixed(1) + 'd';
+        recalculateAll();
+      });
+    }
+
+    // Likes Delivery Presets
+    document.querySelectorAll('.likes-preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.likes-preset-btn').forEach(b => {
+          b.className = 'likes-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+        });
+        btn.className = 'likes-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-rose-600 font-bold';
+        state.modules.likes.spreadMode = btn.dataset.hours;
+        if (btn.dataset.hours === 'custom') {
+          likesCustomHoursBox.classList.remove('hidden');
+        } else {
+          likesCustomHoursBox.classList.add('hidden');
+        }
+        lucide.createIcons();
+        recalculateAll();
+      });
+    });
+
+    if (likesCustomHoursInput) {
+      likesCustomHoursInput.addEventListener('input', () => {
+        let h = parseFloat(likesCustomHoursInput.value) || 24;
+        h = Math.max(1, Math.min(h, 2000));
+        state.modules.likes.customHours = h;
+        if (likesCustomDaysText) likesCustomDaysText.textContent = (h / 24).toFixed(1) + 'd';
+        recalculateAll();
+      });
+    }
+
+    // Comments Delivery Presets
+    document.querySelectorAll('.comments-preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.comments-preset-btn').forEach(b => {
+          b.className = 'comments-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+        });
+        btn.className = 'comments-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-sky-600 font-bold';
+        state.modules.comments.spreadMode = btn.dataset.hours;
+        if (btn.dataset.hours === 'custom') {
+          commentsCustomHoursBox.classList.remove('hidden');
+        } else {
+          commentsCustomHoursBox.classList.add('hidden');
+        }
+        lucide.createIcons();
+        recalculateAll();
+      });
+    });
+
+    if (commentsCustomHoursInput) {
+      commentsCustomHoursInput.addEventListener('input', () => {
+        let h = parseFloat(commentsCustomHoursInput.value) || 24;
+        h = Math.max(1, Math.min(h, 2000));
+        state.modules.comments.customHours = h;
+        if (commentsCustomDaysText) commentsCustomDaysText.textContent = (h / 24).toFixed(1) + 'd';
+        recalculateAll();
+      });
+    }
+
+    // Followers Delivery Presets
+    document.querySelectorAll('.followers-preset-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.followers-preset-btn').forEach(b => {
+          b.className = 'followers-preset-btn py-1 rounded-lg transition hover:text-slate-900';
+        });
+        btn.className = 'followers-preset-btn py-1 rounded-lg transition bg-white shadow-xs text-purple-600 font-bold';
+        state.modules.followers.spreadMode = btn.dataset.hours;
+        if (btn.dataset.hours === 'custom') {
+          followersCustomHoursBox.classList.remove('hidden');
+        } else {
+          followersCustomHoursBox.classList.add('hidden');
+        }
+        lucide.createIcons();
+        recalculateAll();
+      });
+    });
+
+    if (followersCustomHoursInput) {
+      followersCustomHoursInput.addEventListener('input', () => {
+        let h = parseFloat(followersCustomHoursInput.value) || 24;
+        h = Math.max(1, Math.min(h, 2000));
+        state.modules.followers.customHours = h;
+        if (followersCustomDaysText) followersCustomDaysText.textContent = (h / 24).toFixed(1) + 'd';
+        recalculateAll();
+      });
+    }
 
     viewsVarianceSlider.addEventListener('input', () => {
       const v = parseInt(viewsVarianceSlider.value);
