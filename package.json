@@ -1,0 +1,15 @@
+{
+  "name": "fine-smm-panel",
+  "version": "2.0.0",
+  "description": "Multi-Platform Organic Engagement & SMM Scheduler",
+  "main": "index.html",
+  "scripts": {
+    "start": "node proxy.js"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["smm", "scheduler", "automation"],
+  "author": "",
+  "license": "ISC"
+}

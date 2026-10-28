@@ -1,0 +1,2 @@
+/api/smm  /.netlify/functions/smm  200
+/api/smm/*  /.netlify/functions/smm  200
